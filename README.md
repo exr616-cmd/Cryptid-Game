@@ -1,9 +1,15 @@
-NOCTURNE COUNTY V30 — GitHub Pages Ready
+# Nocturne County V31 — Mobile Command UI
 
-Upload the CONTENTS of this folder to the root of the GitHub Pages source branch/folder.
-The file index.html must be directly at the Pages root.
-The .nojekyll file is intentionally included.
+This is a deliberate UI rebuild based on the supplied sketch.
 
-Expected deployment:
-https://<username>.github.io/<repo>/
-(or https://<username>.github.io/ when the repository itself is <username>.github.io)
+The game uses a fixed viewport:
+- narrative scene in the main panel
+- four immediate actions
+- fixed bottom command bar
+- Pack, Map, People, and Journal open as overlays
+- no long page scrolling
+- working local save state
+- working choices and scene transitions
+- working map pins and information panels
+
+Put `index.html` at the root of a GitHub Pages deployment.
