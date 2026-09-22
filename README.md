@@ -1,18 +1,9 @@
-# NOCTURNE COUNTY — V29 Browser Playtest & Visual QA
+NOCTURNE COUNTY V30 — GitHub Pages Ready
 
-V29 repairs the deployment-breaking regression found during real browser playtesting: the V26 consolidation had removed the base #app mount and the original presentation stylesheet.
+Upload the CONTENTS of this folder to the root of the GitHub Pages source branch/folder.
+The file index.html must be directly at the Pages root.
+The .nojekyll file is intentionally included.
 
-Restored:
-- #app mount point
-- responsive game CSS
-- scene/map/panel/button styling
-- mobile layout behavior
-
-QA performed:
-- JavaScript syntax validation
-- Playwright browser execution
-- page error capture
-- rendered DOM verification
-- screenshot capture
-
-This build is intended to be the GitHub Pages-ready continuation of V28.
+Expected deployment:
+https://<username>.github.io/<repo>/
+(or https://<username>.github.io/ when the repository itself is <username>.github.io)
