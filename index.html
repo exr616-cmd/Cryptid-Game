@@ -4824,175 +4824,150 @@ render();
 
 </script>
 
-<style id="v32-ui">
-/* V32 — story-first mobile command interface */
+<style id="v33-clean-ui">
 html,body{height:100%;overflow:hidden}
-body{background:#080a0d}
-#app{height:100dvh;max-width:none;margin:0;padding:0!important;overflow:hidden}
-#app>.head{height:58px;padding:9px 14px!important;margin:0!important;position:relative;z-index:5;
- background:linear-gradient(180deg,#11151b,#0a0c10)!important;border-bottom:1px solid #2c333b!important;
- align-items:center!important}
-#app>.head h1{font-size:16px!important;letter-spacing:.05em!important;margin:0!important;color:#eee!important}
-#app>.head .title{font-size:10px!important;letter-spacing:.16em!important}
+body{background:#07090c!important}
+#app{height:100dvh!important;max-width:900px!important;margin:auto!important;padding:0!important;overflow:hidden!important}
+#app>.head{height:56px!important;padding:8px 13px!important;margin:0!important;display:flex!important;align-items:center!important;
+ background:linear-gradient(180deg,#11151a,#090c10)!important;border-bottom:1px solid #2b333b!important}
+#app>.head h1{font-size:15px!important;letter-spacing:.04em!important;margin:0!important}
+#app>.head .title{font-size:9px!important}
 #app>.head>div:last-child{display:none!important}
-.layout{height:calc(100dvh - 58px)!important;margin:0!important;display:block!important}
+.layout{height:calc(100dvh - 56px)!important;margin:0!important;display:block!important}
 .layout>.left,.layout>.right{display:none!important}
 .layout>main#scene{height:100%!important;min-height:0!important;margin:0!important;border:0!important;border-radius:0!important;
- padding:18px 15px 118px!important;background:
- radial-gradient(circle at 75% 18%,rgba(201,169,110,.08),transparent 27%),
- linear-gradient(180deg,#0c1015 0%,#090b0f 72%,#07090c 100%)!important;
- overflow:hidden!important;position:relative!important}
-.layout>main#scene>.small:first-child{color:#c9a96e!important;font:10px/1.2 system-ui,sans-serif!important;
- letter-spacing:.16em!important;text-transform:uppercase!important}
-.layout>main#scene .sceneTitle{font-size:clamp(28px,8vw,46px)!important;line-height:1.04!important;
- font-weight:400!important;margin:9px 0 8px!important;color:#f1ede4!important}
-.layout>main#scene>.sub{color:#8d959e!important;font-size:12px!important;line-height:1.4!important;max-width:760px}
-.layout>main#scene .art{height:clamp(115px,24vh,220px)!important;margin:12px 0!important;border:1px solid #262e37!important;
- background:radial-gradient(circle at 50% 50%,rgba(201,169,110,.09),transparent 45%),#0b0f14!important;
- display:grid!important;place-items:center!important;overflow:hidden!important}
-.layout>main#scene .art .symbol{font-size:clamp(55px,14vw,105px)!important;color:#c9a96e!important;opacity:.72}
-.layout>main#scene .prose{font-size:clamp(15px,3.8vw,18px)!important;line-height:1.58!important;
- color:#d7d2c8!important;max-width:820px!important;max-height:25vh!important;overflow:auto!important;padding-right:3px!important}
-.layout>main#scene>.choices{position:absolute!important;left:12px!important;right:12px!important;bottom:66px!important;
- display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;max-height:26vh!important;overflow:auto!important;
- padding:0!important;background:transparent!important}
-.layout>main#scene .choices .choice{min-height:48px!important;padding:8px 10px!important;background:#141920!important;
- border:1px solid #343c46!important;border-radius:7px!important;text-align:left!important}
-.layout>main#scene .choices .choice:hover,.layout>main#scene .choices .choice:focus{border-color:#c9a96e!important;color:#fff!important}
-.layout>main#scene .choices .choice::first-letter{color:#c9a96e}
-.v32-nav{position:fixed;left:0;right:0;bottom:0;height:66px;z-index:1000;display:grid;grid-template-columns:repeat(5,1fr);
- background:rgba(10,12,16,.98);border-top:1px solid #303741;padding-bottom:env(safe-area-inset-bottom)}
-.v32-nav button{border:0!important;border-radius:0!important;background:#0f1318!important;padding:5px 2px!important;
- min-height:60px!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer}
-.v32-nav button:active{background:#1a2028!important}
-.v32-nav .ico{font-size:18px;color:#c9a96e;line-height:1}
-.v32-nav .lbl{font:9px system-ui,sans-serif;color:#aeb4bc;letter-spacing:.1em;text-transform:uppercase}
-.v32-panel{position:fixed;z-index:1100;inset:10px 10px 76px;background:rgba(7,9,12,.98);border:1px solid #3a424d;
- border-radius:10px;box-shadow:0 20px 70px #000;display:none;overflow:hidden}
-.v32-panel.open{display:block}
-.v32-head{height:50px;padding:8px 10px;border-bottom:1px solid #2c333c;display:flex;align-items:center;justify-content:space-between}
-.v32-head h2{margin:0;font-size:18px;font-weight:400}.v32-close{background:#171c23!important;border:1px solid #39414b!important;padding:6px 10px!important}
-.v32-body{height:calc(100% - 50px);overflow:auto;padding:12px}
-.v32-body>.panel{margin-bottom:10px!important}
-.v32-body .map{max-height:none}
-.v32-body .choices{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.v32-body .choices button{width:100%}
-.v32-body ul{padding-left:18px}
-.v32-toast{position:fixed;left:50%;bottom:76px;transform:translate(-50%,10px);z-index:1300;background:#171b21;
- border:1px solid #454e5a;border-radius:7px;padding:8px 12px;color:#d8d3c7;font:12px system-ui,sans-serif;opacity:0;pointer-events:none;transition:.18s}
-.v32-toast.show{opacity:1;transform:translate(-50%,0)}
+padding:17px 14px 112px!important;overflow:hidden!important;position:relative!important;
+background:radial-gradient(circle at 72% 16%,rgba(201,169,110,.08),transparent 28%),linear-gradient(180deg,#0b0f14,#07090c)!important}
+#scene>.small{color:#c9a96e!important;font:10px/1.2 system-ui,sans-serif!important;letter-spacing:.13em!important;text-transform:uppercase!important}
+#scene>.sceneTitle{font-size:clamp(27px,7.6vw,43px)!important;line-height:1.05!important;font-weight:400!important;margin:8px 0 5px!important}
+#scene>.sub{font-size:12px!important;color:#89919a!important;line-height:1.35!important}
+#scene>.art{height:clamp(105px,21vh,175px)!important;margin:10px 0!important}
+#scene>.prose{font-size:clamp(15px,3.9vw,18px)!important;line-height:1.55!important;color:#d7d2c8!important;
+max-height:29vh!important;overflow:auto!important;padding-right:3px!important}
+#scene>.choices{position:absolute!important;left:12px!important;right:12px!important;bottom:62px!important;
+display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;max-height:25vh!important;overflow:auto!important;
+background:linear-gradient(180deg,transparent,#080a0e 12%)!important;padding-top:10px!important}
+#scene>.choices .choice{min-height:46px!important;padding:7px 9px!important;background:#141920!important;
+border:1px solid #343d47!important;border-radius:7px!important;font-size:13px!important;text-align:left!important}
+#scene>.choices .choice:active{background:#202732!important;border-color:#c9a96e!important}
+#scene>.notice.danger{margin:8px 0!important}
+.v33-nav{position:fixed;left:0;right:0;bottom:0;height:62px;z-index:10000;display:grid;grid-template-columns:repeat(5,1fr);
+background:rgba(9,11,15,.99);border-top:1px solid #303740;padding-bottom:env(safe-area-inset-bottom)}
+.v33-nav button{border:0!important;border-radius:0!important;background:#0e1217!important;padding:4px 1px!important;min-height:58px!important;
+display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important}
+.v33-nav button:active{background:#1b2129!important}
+.v33-nav .ico{font-size:17px;color:#c9a96e;line-height:1}.v33-nav .lbl{font:8px system-ui,sans-serif;color:#aeb4bc;letter-spacing:.1em}
+.v33-panel{position:fixed;z-index:10001;left:8px;right:8px;top:8px;bottom:70px;background:#0b0e13;border:1px solid #3a424c;
+border-radius:9px;box-shadow:0 20px 70px #000;display:none;overflow:hidden}
+.v33-panel.open{display:block}.v33-head{height:48px;padding:7px 10px;border-bottom:1px solid #2c333b;display:flex;align-items:center;justify-content:space-between}
+.v33-head h2{margin:0;font-size:18px;font-weight:400}.v33-close{background:#171c23!important;border:1px solid #39414b!important;padding:5px 9px!important}
+.v33-body{height:calc(100% - 48px);overflow:auto;padding:10px}.v33-body .panel{margin-bottom:8px!important}
+.v33-body .map{max-height:none}.v33-body button{max-width:100%}
 @media(min-width:800px){
- #app{max-width:900px;margin:auto;border-left:1px solid #1c2229;border-right:1px solid #1c2229}
- .v32-nav{max-width:900px;left:50%;right:auto;width:900px;transform:translateX(-50%)}
- .v32-panel{max-width:880px;left:50%;right:auto;width:calc(100% - 20px);transform:translateX(-50%)}
+ .v33-nav{width:900px;left:50%;right:auto;transform:translateX(-50%)}
+ .v33-panel{left:50%;right:auto;width:884px;transform:translateX(-50%)}
 }
 </style>
 
-<script id="v32-ui-script">
+<script id="v33-clean-ui-script">
 (() => {
-  const $q = s => document.querySelector(s);
-  let activePanel = null;
+  const badIds=['v22-button','v22-rel','v25-panel','nocturne-v27-qa'];
+  const badHeadings=[
+    'Integration Layer','Equipment','Evidence Board','Catalogued Evidence',
+    'Living County','THE COUNTY REMEMBERS','HISTORY COLLISION','HISTORY COLLISIONS',
+    'CAUSAL CHAINS','DEEP COUNTY','CONDITION / PSYCHOLOGY'
+  ];
 
-  function mount() {
-    const app = $q('#app');
-    if (!app) return;
-    document.querySelectorAll('.v32-nav,.v32-panel,.v32-toast').forEach(e=>e.remove());
+  function cleanLegacy(){
+    badIds.forEach(id=>document.getElementById(id)?.remove());
 
-    const nav = document.createElement('nav');
-    nav.className='v32-nav';
+    // Remove every legacy integration panel that was appended into the main story.
+    const scene=document.getElementById('scene');
+    if(scene){
+      [...scene.querySelectorAll('.panel')].forEach(p=>p.remove());
+    }
+
+    // Remove old floating/reminder widgets even if they were given a generated id.
+    [...document.body.children].forEach(el=>{
+      if(el===document.getElementById('app') || el.classList.contains('v33-nav') || el.classList.contains('v33-panel')) return;
+      const text=(el.textContent||'').trim();
+      if(text.includes('THE COUNTY REMEMBERS') || text.includes('PLAYTHROUGH QA')) el.remove();
+    });
+  }
+
+  function panelHTML(which){
+    const left=document.querySelector('.layout>.left');
+    const right=document.querySelector('.layout>.right');
+    if(which==='pack') return left?.innerHTML || '<div class="small">Your field pack is empty.</div>';
+    if(which==='map'){
+      const p=[...(right?.querySelectorAll('.panel')||[])].find(x=>(x.querySelector('h2')?.textContent||'').trim()==='Map');
+      return p?.outerHTML || '<div class="small">The county map is unavailable.</div>';
+    }
+    if(which==='people'){
+      const p=[...(right?.querySelectorAll('.panel')||[])].find(x=>(x.querySelector('h2')?.textContent||'').trim()==='People');
+      return p?.outerHTML || '<div class="small">No one is currently visible.</div>';
+    }
+    if(which==='journal'){
+      const wanted=['Objectives','Field Log','Side Work','Evidence','Local Life','You'];
+      const ps=[...(right?.querySelectorAll('.panel')||[])].filter(x=>wanted.includes((x.querySelector('h2')?.textContent||'').trim()));
+      return ps.map(x=>x.outerHTML).join('') || '<div class="small">Your journal is empty.</div>';
+    }
+    return '';
+  }
+
+  function buildPanels(){
+    document.querySelectorAll('.v33-panel,.v33-nav').forEach(x=>x.remove());
+
+    const nav=document.createElement('nav');
+    nav.className='v33-nav';
     nav.innerHTML=`
-      <button onclick="V32.open('act')"><span class="ico">✦</span><span class="lbl">Act</span></button>
-      <button onclick="V32.open('pack')"><span class="ico">▣</span><span class="lbl">Pack</span></button>
-      <button onclick="V32.open('map')"><span class="ico">⌖</span><span class="lbl">Map</span></button>
-      <button onclick="V32.open('people')"><span class="ico">♙</span><span class="lbl">People</span></button>
-      <button onclick="V32.open('journal')"><span class="ico">▤</span><span class="lbl">Journal</span></button>`;
+      <button onclick="V33.act()"><span class="ico">✦</span><span class="lbl">Act</span></button>
+      <button onclick="V33.open('pack')"><span class="ico">▣</span><span class="lbl">Pack</span></button>
+      <button onclick="V33.open('map')"><span class="ico">⌖</span><span class="lbl">Map</span></button>
+      <button onclick="V33.open('people')"><span class="ico">♙</span><span class="lbl">People</span></button>
+      <button onclick="V33.open('journal')"><span class="ico">▤</span><span class="lbl">Journal</span></button>`;
     document.body.appendChild(nav);
 
-    ['act','pack','map','people','journal'].forEach(type=>{
-      const panel=document.createElement('section');
-      panel.className='v32-panel';
-      panel.id='v32-'+type;
-      panel.innerHTML=`<div class="v32-head"><h2>${({act:'Current Scene',pack:'Field Pack',map:'County Map',people:'People',journal:'Journal'})[type]}</h2><button class="v32-close" onclick="V32.close()">Close</button></div><div class="v32-body"></div>`;
-      document.body.appendChild(panel);
-    });
-    const toast=document.createElement('div');toast.className='v32-toast';toast.id='v32-toast';document.body.appendChild(toast);
-
-    fill('act'); fill('pack'); fill('map'); fill('people'); fill('journal');
-  }
-
-  function source(selector) {
-    const el=document.querySelector(selector);
-    return el ? el.innerHTML : '<div class="small">Nothing here yet.</div>';
-  }
-
-  function fill(type) {
-    const panel=$q('#v32-'+type); if(!panel)return;
-    const body=panel.querySelector('.v32-body');
-    if(type==='act'){
-      const scene=document.querySelector('#scene');
-      const prose=scene?.querySelector('.prose')?.outerHTML||'';
-      const title=scene?.querySelector('.sceneTitle')?.outerHTML||'';
-      const area=scene?.querySelector('.small')?.outerHTML||'';
-      const choices=scene?.querySelector('.choices')?.outerHTML||'<div class="small">There is nothing immediate to do.</div>';
-      body.innerHTML=area+title+prose+choices;
-    }
-    if(type==='pack') body.innerHTML=source('.left');
-    if(type==='map') {
-      const right=document.querySelector('.right');
-      const panels=[...(right?.querySelectorAll('.panel')||[])];
-      const mapPanel=panels.find(p=>(p.querySelector('h2')?.textContent||'').trim()==='Map');
-      body.innerHTML=mapPanel?.outerHTML||'<div class="small">The map is unavailable.</div>';
-    }
-    if(type==='people') {
-      const right=document.querySelector('.right');
-      const panels=[...(right?.querySelectorAll('.panel')||[])];
-      const p=panels.find(x=>(x.querySelector('h2')?.textContent||'').trim()==='People');
-      body.innerHTML=p?.outerHTML||'<div class="small">No one is currently available.</div>';
-    }
-    if(type==='journal') {
-      const right=document.querySelector('.right');
-      const panels=[...(right?.querySelectorAll('.panel')||[])];
-      const keep=panels.filter(p=>{
-        const h=(p.querySelector('h2')?.textContent||'').trim();
-        return ['Objectives','Evidence','Field Log','Local Life','Side Work','You','CAUSAL CHAINS','DEEP COUNTY','CONDITION / PSYCHOLOGY','HISTORY COLLISIONS'].includes(h);
-      });
-      body.innerHTML=keep.map(x=>x.outerHTML).join('')||'<div class="small">Your journal is empty.</div>';
+    for(const type of ['pack','map','people','journal']){
+      const names={pack:'Field Pack',map:'County Map',people:'People',journal:'Journal'};
+      const p=document.createElement('section');
+      p.className='v33-panel';p.id='v33-'+type;
+      p.innerHTML=`<div class="v33-head"><h2>${names[type]}</h2><button class="v33-close" onclick="V33.close()">Close</button></div><div class="v33-body">${panelHTML(type)}</div>`;
+      document.body.appendChild(p);
     }
   }
 
-  function refresh() {
-    if(!document.querySelector('.v32-nav')) mount();
-    ['act','pack','map','people','journal'].forEach(fill);
+  function refresh(){
+    cleanLegacy();
+    buildPanels();
   }
 
-  function open(type) {
+  function open(type){
     refresh();
-    document.querySelectorAll('.v32-panel').forEach(p=>p.classList.remove('open'));
-    const p=$q('#v32-'+type); if(p){p.classList.add('open');activePanel=type;}
+    document.getElementById('v33-'+type)?.classList.add('open');
   }
-  function close(){document.querySelectorAll('.v32-panel').forEach(p=>p.classList.remove('open'));activePanel=null}
+  function close(){document.querySelectorAll('.v33-panel').forEach(x=>x.classList.remove('open'))}
+  function act(){
+    close();
+    const first=document.querySelector('#scene>.choices .choice');
+    if(first){first.scrollIntoView({block:'center',behavior:'smooth'});}
+  }
 
-  window.V32={open,close,refresh,toast:(msg)=>{
-    const t=$q('#v32-toast'); if(!t)return;
-    t.textContent=msg;t.classList.add('show');clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove('show'),1800);
-  }};
+  window.V33={open,close,act,refresh};
 
-  // The original V29 engine remains authoritative. We only wrap its render,
-  // preserving all scenes, choices, relationships, cryptid campaigns, QA state,
-  // saves, and ending logic.
-  const originalRender=window.render;
-  if(originalRender && !originalRender.__v32wrapped){
+  const base=window.render;
+  if(typeof base==='function' && !base.__v33){
     const wrapped=function(){
-      originalRender();
-      mount();
-      refresh();
+      const result=base.apply(this,arguments);
+      setTimeout(refresh,0);
+      return result;
     };
-    wrapped.__v32wrapped=true;
+    wrapped.__v33=true;
     window.render=wrapped;
+    setTimeout(()=>{try{window.render()}catch(e){console.error(e)}},0);
+  } else {
+    setTimeout(refresh,0);
   }
-
-  // Re-render after all earlier modules have finished their initialization.
-  setTimeout(()=>{ try { if(window.render) window.render(); } catch(e) { console.error(e); } },0);
 })();
 </script>
 

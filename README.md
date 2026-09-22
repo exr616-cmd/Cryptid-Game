@@ -1,14 +1,13 @@
-# Nocturne County V32 — Story-First Command UI
+# Nocturne County V33 — Clean Story UI
 
-This build preserves the V29 narrative engine and all accumulated story/mechanics.
-V32 changes the presentation layer only:
+V33 is based on the full V29 game, not the V31/V32 mini prototype.
 
-- fixed mobile viewport
-- story scene is the primary screen
-- four immediate choices remain visible
-- fixed Act / Pack / Map / People / Journal command bar
-- secondary systems open as overlays
-- original V29 save, story, cryptid, relationship, investigation, horror, combat,
-  world-state, and ending systems remain authoritative
+It preserves the original story engine and systems while:
+- removing legacy integration panels from the story screen
+- removing the County Remembers corner popup
+- removing the V27 QA popup
+- hiding the desktop sidebars on mobile
+- keeping the full underlying inventory/map/people/journal data accessible through overlays
+- keeping the original scene choices and global game functions intact
 
-Deploy `index.html` at the root of GitHub Pages.
+Deploy `index.html` at the GitHub Pages root.
