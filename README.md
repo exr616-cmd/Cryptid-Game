@@ -1,9 +1,10 @@
-# NOCTURNE COUNTY — V27 Playthrough QA / Integrity
+NOCTURNE COUNTY — V28 Ultimate Web Fix
 
-V27 is the first dedicated end-to-end QA harness pass after the V25 Ultimate target and V26 stabilization.
+This build fixes the V27/V26 document-shell regression that could cause GitHub Pages to display the JavaScript source as plain text.
 
-It adds a non-invasive integrity smoke test for the accumulated runtime: required core APIs, state containers, cryptid registry coverage, localStorage availability, JSON state serialization, and renderer availability.
+The cumulative game code now has a valid <!doctype html>, <html>, <head>, <body>, and initial <script> wrapper before the legacy runtime layers. Existing script boundaries and the final closing body/html tags are preserved.
 
-To expose the QA panel during local play, open `index.html?qa=1` and click **Run integrity smoke test**.
-
-This layer is intentionally non-destructive: it does not rewrite the player's save or alter the active story state.
+GitHub Pages:
+- Put index.html at the repository root (or configure the Pages source folder that contains it).
+- If using a project site, the resulting URL should load the game UI rather than raw source.
+- Hard-refresh after deployment (Ctrl+Shift+R on desktop; clear the site cache on mobile if necessary).
