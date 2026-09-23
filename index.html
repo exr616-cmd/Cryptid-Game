@@ -18,6 +18,15 @@ button{background:#18212a;color:var(--ink);border:1px solid #394650;padding:10px
 ul{padding-left:18px}.item{display:flex;justify-content:space-between;border-bottom:1px solid #202830;padding:6px 0}.tag{font-size:11px;border:1px solid #3a454e;padding:1px 5px;color:#aeb7b2}.log{max-height:160px;overflow:auto;font-size:12px;color:#aeb0a8}.notice{padding:9px;border-left:2px solid var(--accent);background:#12181d;margin:10px 0}.danger{border-color:var(--danger)}.good{border-color:var(--good)}
 .map{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.node{min-height:54px;font-size:11px;padding:5px;background:#111920;border:1px solid #28333b}.node.current{border-color:var(--accent);box-shadow:0 0 12px #c9a96e33}.node.locked{opacity:.35}.node.done{background:#182119}.node b{display:block}.footer{margin-top:12px;color:#6f7774;font-size:11px;text-align:center}
 @media(max-width:1050px){.layout{grid-template-columns:1fr}.left,.right{display:grid;grid-template-columns:1fr 1fr;gap:10px}#scene{min-height:auto}} @media(max-width:650px){.left,.right{display:block}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 </head>
 <body>
@@ -5081,6 +5090,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-card{padding:10px;margin:7px 0;border-left:2px solid #555f6b;background:#10151c}
 .ncx-card strong{color:#eee}.ncx-muted{color:#8f98a2;font-size:12px}
 .ncx-pill{display:inline-block;border:1px solid #3b444f;border-radius:12px;padding:3px 7px;margin:2px;font-size:10px;color:#b8c0c9}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v40-content-expansion-script">
@@ -5246,6 +5264,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-ledger summary{cursor:pointer;color:#d8c08b}
 .ncx-entry{padding:7px 9px;margin:6px 0;background:#0c1015;border:1px solid #252c35;border-radius:6px}
 .ncx-entry b{color:#e8e1d3}.ncx-entry em{color:#9ea7b1}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v41-authored-world-script">
@@ -5516,6 +5543,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-log div{padding:6px 0;border-bottom:1px solid #20262e}
 .ncx-board{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:7px}
 .ncx-board .ncx-entry{min-height:70px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v42-living-county-script">
@@ -5668,6 +5704,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-react button{padding:6px 9px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-react button:hover{border-color:#b99b61}
 .ncx-react .small{font-size:11px;color:#8e98a3}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v43-reactive-story-script">
@@ -5776,6 +5821,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v44 .event b{color:#e4dbc8}.ncx-v44 .muted{color:#8f99a4}
 .ncx-v44 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v44 button:hover{border-color:#b99b61}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v44-persistent-consequences-script">
@@ -5948,6 +6002,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v45 button:hover{border-color:#b99b61}
 .ncx-v45 .node{padding:8px;border:1px solid #303945;background:#10161d;border-radius:6px}
 .ncx-v45 .linked{border-color:#806b4b}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v45-investigation-relationship-script">
@@ -6105,6 +6168,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v46 .bar i{display:block;height:100%;background:#8b7350}
 .ncx-v46 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v46 button:hover{border-color:#b99b61}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v46-encounter-system-script">
@@ -6249,6 +6321,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v47 .box b{color:#e6dcc9}.ncx-v47 .muted{color:#909aa5}.ncx-v47 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px}
 .ncx-v47 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v47 button:hover{border-color:#b99b61}
 .ncx-v47 .bar{height:7px;background:#171d24;border:1px solid #303943;border-radius:5px;overflow:hidden}.ncx-v47 .bar i{display:block;height:100%;background:#8b7350}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v47-survival-economy-script">
@@ -6330,6 +6411,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v48 .loc.active{border-color:#b99b61}.ncx-v48 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v48 button:hover{border-color:#b99b61}
 .ncx-v48 .bar{height:7px;background:#171d24;border:1px solid #303943;border-radius:5px;overflow:hidden}.ncx-v48 .bar i{display:block;height:100%;background:#8b7350}
 .ncx-v48 .hidden{filter:blur(3px);opacity:.5}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v48-map-stealth-script">
@@ -6431,6 +6521,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v49 .box b{color:#e6dcc9}.ncx-v49 .muted{color:#909aa5}.ncx-v49 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:7px}
 .ncx-v49 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v49 button:hover{border-color:#b99b61}
 .ncx-v49 .tag{display:inline-block;padding:2px 5px;margin:2px;border:1px solid #343d47;border-radius:4px;color:#aab2bb}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v49-npc-schedules-script">
@@ -6521,6 +6620,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v50{font-size:12px;line-height:1.5}.ncx-v50 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}
 .ncx-v50 .box b{color:#e6dcc9}.ncx-v50 .muted{color:#909aa5}.ncx-v50 .event{padding:7px;border-left:2px solid #6f6049;margin:5px 0;background:#10161d}
 .ncx-v50 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v50 button:hover{border-color:#b99b61}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v50-autonomous-world-script">
@@ -6604,6 +6712,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v51{font-size:12px;line-height:1.5}.ncx-v51 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}
 .ncx-v51 .box b{color:#e6dcc9}.ncx-v51 .muted{color:#909aa5}.ncx-v51 .event{padding:7px;border-left:2px solid #6f6049;margin:5px 0;background:#10161d}
 .ncx-v51 .pill{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v51 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v51-consequence-engine-script">
@@ -6719,6 +6836,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v52 .box b{color:#e6dcc9}.ncx-v52 .muted{color:#909aa5}.ncx-v52 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:7px}
 .ncx-v52 .item{padding:7px;background:#10161d;border-left:2px solid #514937;margin:4px 0}.ncx-v52 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v52 button:hover{border-color:#b99b61}.ncx-v52 .locked{opacity:.55}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v52-location-content-script">
@@ -6840,6 +6966,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v53{font-size:12px;line-height:1.5}.ncx-v53 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}
 .ncx-v53 .box b{color:#e6dcc9}.ncx-v53 .muted{color:#909aa5}.ncx-v53 .choice{display:block;width:100%;text-align:left;padding:8px;margin:5px 0;background:#121820;color:#ddd;border:1px solid #35404b;border-radius:5px}
 .ncx-v53 .choice:hover{border-color:#b99b61}.ncx-v53 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v53-dialogue-quests-script">
@@ -6962,6 +7097,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v54 .box b{color:#e6dcc9}.ncx-v54 .muted{color:#909aa5}.ncx-v54 .enc{padding:8px;margin:6px 0;background:#10161d;border-left:2px solid #625640}
 .ncx-v54 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v54 button:hover{border-color:#b99b61}
 .ncx-v54 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v54-encounters-script">
@@ -7058,6 +7202,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v55 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v55 button:hover{border-color:#b99b61}
 .ncx-v55 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
 .ncx-v55 .theory{border-left:3px solid #6d5c42;padding-left:9px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v55-investigation-board-script">
@@ -7144,6 +7297,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v56 .box b{color:#e6dcc9}.ncx-v56 .muted{color:#909aa5}.ncx-v56 .scene{padding:10px;margin:6px 0;background:#10161d;border-left:3px solid #665841}
 .ncx-v56 button{padding:6px 9px;margin:2px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v56 button:hover{border-color:#b99b61}
 .ncx-v56 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v56-narrative-state-script">
@@ -7251,6 +7413,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v57 .scene{padding:11px;margin:7px 0;background:#10161d;border-left:3px solid #665841}.ncx-v57 .muted{color:#909aa5}
 .ncx-v57 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v57 button:hover{border-color:#b99b61}.ncx-v57 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v57-bigfoot-script">
@@ -7350,6 +7521,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v58 .scene{padding:11px;margin:7px 0;background:#10161d;border-left:3px solid #665841}.ncx-v58 .muted{color:#909aa5}
 .ncx-v58 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v58 button:hover{border-color:#b99b61}.ncx-v58 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v58-chupacabra-script">
@@ -7441,6 +7621,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v59 .scene{padding:11px;margin:7px 0;background:#10161d;border-left:3px solid #665841}.ncx-v59 .muted{color:#909aa5}
 .ncx-v59 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v59 button:hover{border-color:#b99b61}.ncx-v59 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v59-goatman-script">
@@ -7532,6 +7721,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v60 .scene{padding:11px;margin:7px 0;background:#10161d;border-left:3px solid #665841}.ncx-v60 .muted{color:#909aa5}
 .ncx-v60 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v60 button:hover{border-color:#b99b61}.ncx-v60 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v60-flatwoods-script">
@@ -7628,6 +7826,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v61 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v61 button:hover{border-color:#b99b61}.ncx-v61 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
 .ncx-v61 .locked{opacity:.55}.ncx-v61 .peak{border-left-color:#a98655}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v61-crossarc-script">
@@ -7715,6 +7922,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v62 .scene{padding:11px;margin:7px 0;background:#10161d;border-left:3px solid #665841}.ncx-v62 .muted{color:#909aa5}
 .ncx-v62 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v62 button:hover{border-color:#b99b61}.ncx-v62 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v62-wendigo-script">
@@ -7810,6 +8026,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v63 .scene{padding:11px;margin:7px 0;background:#10161d;border-left:3px solid #665841}.ncx-v63 .peak{border-left-color:#a98655}
 .ncx-v63 .muted{color:#909aa5}.ncx-v63 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v63 button:hover{border-color:#b99b61}.ncx-v63 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v63-mothman-script">
@@ -7909,6 +8134,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v64 .scene{padding:11px;margin:7px 0;background:#10161d;border-left:3px solid #665841}.ncx-v64 .peak{border-left-color:#a98655}
 .ncx-v64 .muted{color:#909aa5}.ncx-v64 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v64 button:hover{border-color:#b99b61}.ncx-v64 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v64-county-event-script">
@@ -8006,6 +8240,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v65 .muted{color:#909aa5}.ncx-v65 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v65 button:hover{border-color:#b99b61}.ncx-v65 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
 .ncx-v65 .theory{border-left:3px solid #a98655}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v65-investigation-board-script">
@@ -8099,6 +8342,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v66 .muted{color:#909aa5}.ncx-v66 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v66 button:hover{border-color:#b99b61}.ncx-v66 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
 .ncx-v66 .danger{border-left:3px solid #865b4a}.ncx-v66 .important{border-left:3px solid #a98655}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v66-living-county-script">
@@ -8225,6 +8477,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v67 .muted{color:#909aa5}.ncx-v67 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v67 button:hover{border-color:#b99b61}.ncx-v67 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
 .ncx-v67 .locked{opacity:.55}.ncx-v67 .route{border-left:3px solid #665841}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v67-region-map-script">
@@ -8365,6 +8626,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v68 .secret{border-left:3px solid #a98655}.ncx-v68 .danger{border-left:3px solid #865b4a}
 .ncx-v68 .muted{color:#909aa5}.ncx-v68 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v68 button:hover{border-color:#b99b61}.ncx-v68 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v68-location-exploration-script">
@@ -8547,6 +8817,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v69 .important{border-left:3px solid #a98655}.ncx-v69 .contradiction{border-left:3px solid #865b4a}
 .ncx-v69 .muted{color:#909aa5}.ncx-v69 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v69 button:hover{border-color:#b99b61}.ncx-v69 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v69-evidence-integration-script">
@@ -8708,6 +8987,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v70 .muted{color:#909aa5}.ncx-v70 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v70 button:hover{border-color:#b99b61}.ncx-v70 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
 .ncx-v70 .meter{height:5px;background:#202731;margin-top:6px;border-radius:4px;overflow:hidden}.ncx-v70 .fill{height:100%;background:#8d7b5d}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v70-hypothesis-system-script">
@@ -8809,6 +9097,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v71 .impact{border-left:3px solid #a98655}.ncx-v71 .locked{opacity:.55}.ncx-v71 .muted{color:#909aa5}
 .ncx-v71 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v71 button:hover{border-color:#b99b61}.ncx-v71 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v71-choice-consequence-script">
@@ -8917,6 +9214,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v72 .live{border-left:3px solid #a98655}.ncx-v72 .hidden{opacity:.55}.ncx-v72 .muted{color:#909aa5}
 .ncx-v72 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v72 button:hover{border-color:#b99b61}.ncx-v72 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v72-event-director-script">
@@ -9031,6 +9337,15 @@ WE WENT HOME.`,choices:[]}
 .ncx-v73 .memory{border-left:3px solid #8d7b5d}.ncx-v73 .trust{border-left:3px solid #63755f}.ncx-v73 .muted{color:#909aa5}
 .ncx-v73 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v73 button:hover{border-color:#b99b61}.ncx-v73 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v73-dialogue-memory-script">
@@ -9178,6 +9493,15 @@ background:#151b22;border:2px solid #8b96a0;color:#eee;cursor:pointer;font-weigh
 .ncx-v74 .muted{color:#909aa5}.ncx-v74 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}
 .ncx-v74 button:hover{border-color:#b99b61}.ncx-v74 .details{padding:8px;background:#10161d;border:1px solid #313b46;border-radius:6px;margin-top:7px}
 .ncx-v74 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v74-area-map-script">
@@ -9318,6 +9642,15 @@ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),lin
 .ncx-v75 .marker:hover{transform:scale(1.12);border-color:#b99b61}.ncx-v75 .npc{border-color:#829b78}.ncx-v75 .activity{border-color:#8795a8}.ncx-v75 .shop{border-color:#b19a70}.ncx-v75 .quest{border-color:#a97962}.ncx-v75 .objective{border-color:#b9aa6d}.ncx-v75 .secret{border-color:#856d9c}.ncx-v75 .locked{border-style:dashed;opacity:.42}.ncx-v75 .new{box-shadow:0 0 0 3px #8d7b5d55,0 2px 8px #0008}
 .ncx-v75 .muted{color:#909aa5}.ncx-v75 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v75 button:hover{border-color:#b99b61}
 .ncx-v75 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v75 .details{padding:9px;background:#10161d;border:1px solid #313b46;border-radius:6px;margin-top:7px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v75-dynamic-map-script">
@@ -9464,6 +9797,15 @@ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),lin
 .ncx-v76 .marker:hover{transform:scale(1.12);border-color:#b99b61}.ncx-v76 .npc{border-color:#829b78}.ncx-v76 .activity{border-color:#8795a8}.ncx-v76 .shop{border-color:#b19a70}.ncx-v76 .quest{border-color:#a97962}.ncx-v76 .objective{border-color:#b9aa6d}.ncx-v76 .secret{border-color:#856d9c}.ncx-v76 .new{box-shadow:0 0 0 3px #8d7b5d55,0 2px 8px #0008}.ncx-v76 .closed{opacity:.38;border-style:dashed}
 .ncx-v76 .muted{color:#909aa5}.ncx-v76 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v76 button:hover{border-color:#b99b61}
 .ncx-v76 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v76 .details{padding:9px;background:#10161d;border:1px solid #313b46;border-radius:6px;margin-top:7px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v76-schedule-script">
@@ -9584,6 +9926,15 @@ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),lin
 .ncx-v77 .muted{color:#909aa5}.ncx-v77 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v77 button:hover{border-color:#b99b61}
 .ncx-v77 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v77 .details{padding:9px;background:#10161d;border:1px solid #313b46;border-radius:6px;margin-top:7px}
 .ncx-v77 .routine{padding:7px;margin:5px 0;background:#10161d;border:1px solid #2e3741;border-radius:6px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v77-npc-routines-script">
@@ -9738,6 +10089,15 @@ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),lin
 .ncx-v78 .muted{color:#909aa5}.ncx-v78 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v78 button:hover{border-color:#b99b61}
 .ncx-v78 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v78 .details{padding:9px;background:#10161d;border:1px solid #313b46;border-radius:6px;margin-top:7px}
 .ncx-v78 .scene{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v78-emergent-meetings-script">
@@ -9853,6 +10213,15 @@ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),lin
 .ncx-v79 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v79 .details{padding:9px;background:#10161d;border:1px solid #313b46;border-radius:6px;margin-top:7px}
 .ncx-v79 .row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.ncx-v79 .scene{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}
 .ncx-v79 .bar{height:5px;background:#202a33;border-radius:4px;overflow:hidden;margin-top:4px}.ncx-v79 .fill{height:100%;background:#8795a8}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <script id="v79-npc-complete-script">
@@ -9999,6 +10368,15 @@ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),lin
 
 <style id="v80-time-day-css">
 .ncx-v80{font-size:12px;line-height:1.5}.ncx-v80 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v80 .clock{font-size:25px;letter-spacing:1px}.ncx-v80 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v80 .muted{color:#909aa5}.ncx-v80 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v80 button:hover{border-color:#b99b61}.ncx-v80 .timeline{height:9px;background:#202a33;border-radius:6px;overflow:hidden;margin:7px 0}.ncx-v80 .timeline>div{height:100%;background:#8795a8}.ncx-v80 .event{padding:7px;margin:5px 0;border-left:3px solid #b99b61;background:#111820}.ncx-v80 .locked{opacity:.55}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v80-time-day-script">
 (()=> {
@@ -10033,6 +10411,15 @@ setTimeout(inject,1320);
 
 <style id="v81-dialogue-memory-css">
 .ncx-v81{font-size:12px;line-height:1.5}.ncx-v81 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v81 .muted{color:#909aa5}.ncx-v81 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v81 button:hover{border-color:#b99b61}.ncx-v81 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v81 .line{padding:7px;margin:5px 0;background:#111820;border-left:3px solid #8795a8}.ncx-v81 .memory{padding:6px;margin:4px 0;background:#10161d;border:1px solid #303b46;border-radius:5px}.ncx-v81 .locked{opacity:.5}.ncx-v81 .speaker{font-weight:bold}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v81-dialogue-memory-script">
 (()=> {
@@ -10160,6 +10547,15 @@ setTimeout(inject,1320);
 
 <style id="v82-exploration-investigation-css">
 .ncx-v82{font-size:12px;line-height:1.5}.ncx-v82 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v82 .muted{color:#909aa5}.ncx-v82 button{padding:7px 10px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v82 button:hover{border-color:#b99b61}.ncx-v82 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v82 .loc{padding:8px;margin:5px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v82 .loc b{font-size:13px}.ncx-v82 .evidence{padding:8px;margin:5px 0;background:#10161d;border-left:3px solid #b99b61}.ncx-v82 .lead{padding:8px;margin:5px 0;background:#10161d;border-left:3px solid #8795a8}.ncx-v82 .done{opacity:.58}.ncx-v82 .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v82-exploration-investigation-script">
 (()=> {
@@ -10288,6 +10684,15 @@ setTimeout(inject,1320);
 
 <style id="v83-investigation-board-css">
 .ncx-v83{font-size:12px;line-height:1.45}.ncx-v83 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v83 .muted{color:#909aa5}.ncx-v83 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v83 button:hover{border-color:#b99b61}.ncx-v83 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v83 .board{display:grid;grid-template-columns:1fr 1fr;gap:7px}.ncx-v83 .card{padding:8px;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v83 .card.sel{border-color:#b99b61}.ncx-v83 .link{padding:5px;margin:4px 0;border-left:3px solid #8795a8;background:#10161d}.ncx-v83 .contradiction{border-left-color:#b66b6b}.ncx-v83 .support{border-left-color:#759b7c}.ncx-v83 .conclusion{border-left-color:#b99b61}.ncx-v83 input,.ncx-v83 textarea{width:100%;box-sizing:border-box;margin:4px 0;padding:7px;background:#0b1015;color:#ddd;border:1px solid #343d47;border-radius:5px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v83-investigation-board-script">
 (()=> {
@@ -10404,6 +10809,15 @@ setTimeout(inject,1320);
 
 <style id="v84-exploration-depth-css">
 .ncx-v84{font-size:12px;line-height:1.45}.ncx-v84 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v84 .muted{color:#909aa5}.ncx-v84 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v84 button:hover{border-color:#b99b61}.ncx-v84 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v84 .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ncx-v84 .card{padding:8px;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v84 .done{opacity:.58}.ncx-v84 .locked{opacity:.55}.ncx-v84 .room{padding:7px;margin:4px 0;border-left:3px solid #8795a8;background:#10161d}.ncx-v84 .secret{border-left-color:#b99b61}.ncx-v84 .obj{border-left:3px solid #759b7c}.ncx-v84 .danger{border-left-color:#b66b6b}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v84-exploration-depth-script">
 (()=> {
@@ -10615,6 +11029,15 @@ setTimeout(inject,1320);
 
 <style id="v85-inventory-css">
 .ncx-v85{font-size:12px;line-height:1.45}.ncx-v85 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v85 .muted{color:#909aa5}.ncx-v85 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v85 button:hover{border-color:#b99b61}.ncx-v85 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v85 .item{padding:8px;margin:5px 0;background:#111820;border-left:3px solid #8795a8}.ncx-v85 .story{border-left-color:#b99b61}.ncx-v85 .used{opacity:.58}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v85-inventory-script">
 (()=> {
@@ -10674,6 +11097,15 @@ setTimeout(inject,1320);
 
 <style id="v86-inventory-ui-css">
 .ncx-v86{font-size:12px;line-height:1.45}.ncx-v86 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v86 .muted{color:#909aa5}.ncx-v86 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v86 button:hover{border-color:#b99b61}.ncx-v86 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v86 .tabs{display:flex;flex-wrap:wrap;gap:4px}.ncx-v86 .tabs button.active{border-color:#b99b61;background:#211c14}.ncx-v86 .invgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.ncx-v86 .slot{min-height:74px;padding:7px;background:#111820;border:1px solid #303b46;border-radius:6px;cursor:pointer}.ncx-v86 .slot:hover{border-color:#687482}.ncx-v86 .slot.sel{border-color:#b99b61;box-shadow:inset 0 0 0 1px #b99b61}.ncx-v86 .slot.eq{border-color:#759b7c}.ncx-v86 .slot .icon{font-size:18px;float:right}.ncx-v86 .detail{padding:10px;background:#10161d;border-left:3px solid #b99b61}.ncx-v86 .detail h3{margin:0 0 5px}.ncx-v86 .count{float:right}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v86-full-inventory-ui-script">
 (()=> {
@@ -10732,6 +11164,15 @@ setTimeout(inject,1320);
 
 <style id="v87-item-world-css">
 .ncx-v87{font-size:12px;line-height:1.45}.ncx-v87 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v87 .muted{color:#909aa5}.ncx-v87 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v87 button:hover{border-color:#b99b61}.ncx-v87 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v87 .event{padding:8px;margin:5px 0;border-left:3px solid #b99b61;background:#10161d}.ncx-v87 .event.done{opacity:.55;border-left-color:#759b7c}.ncx-v87 .req{color:#c59b72}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v87-item-world-integration">
 (()=> {
@@ -10780,6 +11221,15 @@ setTimeout(inject,1320);
 
 <style id="v88-quest-css">
 .ncx-v88{font-size:12px;line-height:1.45}.ncx-v88 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v88 .muted{color:#909aa5}.ncx-v88 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v88 button:hover{border-color:#b99b61}.ncx-v88 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v88 .quest{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v88 .quest.main{border-left:3px solid #b99b61}.ncx-v88 .quest.side{border-left:3px solid #8795a8}.ncx-v88 .quest.done{opacity:.55}.ncx-v88 .progress{height:5px;background:#202832;border-radius:3px;margin:6px 0}.ncx-v88 .progress i{display:block;height:100%;background:#b99b61;border-radius:3px}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v88-quest-script">
 (()=> {
@@ -10875,6 +11325,15 @@ setTimeout(inject,1320);
 
 <style id="v89-save-css">
 .ncx-v89{font-size:12px;line-height:1.45}.ncx-v89 .box{padding:9px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v89 .muted{color:#909aa5}.ncx-v89 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v89 button:hover{border-color:#b99b61}.ncx-v89 .slot{padding:8px;margin:5px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v89 .ok{color:#91ad95}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v89-save-script">
 (()=> {
@@ -10936,6 +11395,15 @@ setTimeout(inject,1320);
 .ncx-v90 .person{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}
 .ncx-v90 .main{border-left:3px solid #b99b61}.ncx-v90 .support{border-left:3px solid #8795a8}.ncx-v90 .deep{border-left:3px solid #759b7c}
 .ncx-v90 .detail{padding:10px;background:#10161d;border-left:3px solid #b99b61}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script>
 (()=> {
@@ -11008,6 +11476,15 @@ setTimeout(inject,1650);
 
 <style id="v91-mara-depth-css">
 .ncx-v91{font-size:12px;line-height:1.5}.ncx-v91 .box{padding:10px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v91 .chapter{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v91 .chapter.active{border-left:3px solid #b99b61}.ncx-v91 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v91 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v91 button:hover{border-color:#b99b61}.ncx-v91 .quote{padding:9px;border-left:3px solid #8795a8;background:#151b22;font-style:italic}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v91-mara-depth">
 (()=> {
@@ -11082,6 +11559,15 @@ setTimeout(inject,1650);
 
 <style id="v92-evelyn-css">
 .ncx-v92{font-size:12px;line-height:1.5}.ncx-v92 .box{padding:10px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v92 .chapter{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v92 .active{border-left:3px solid #b99b61}.ncx-v92 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v92 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v92 button:hover{border-color:#b99b61}.ncx-v92 .quote{padding:9px;border-left:3px solid #8795a8;background:#151b22;font-style:italic}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v92-evelyn-depth">
 (()=> {
@@ -11137,6 +11623,15 @@ setTimeout(inject,1650);
 
 <style id="v93-rowan-css">
 .ncx-v93{font-size:12px;line-height:1.5}.ncx-v93 .box{padding:10px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v93 .chapter{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v93 .active{border-left:3px solid #b99b61}.ncx-v93 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v93 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v93 button:hover{border-color:#b99b61}.ncx-v93 .quote{padding:9px;border-left:3px solid #8795a8;background:#151b22;font-style:italic}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v93-rowan-depth">
 (()=> {
@@ -11210,6 +11705,15 @@ setTimeout(inject,1650);
 
 <style id="v94-lucas-css">
 .ncx-v94{font-size:12px;line-height:1.5}.ncx-v94 .box{padding:10px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v94 .chapter{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v94 .active{border-left:3px solid #b99b61}.ncx-v94 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v94 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v94 button:hover{border-color:#b99b61}.ncx-v94 .quote{padding:9px;border-left:3px solid #8795a8;background:#151b22;font-style:italic}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v94-lucas-depth">
 (()=> {
@@ -11284,6 +11788,15 @@ setTimeout(inject,1650);
 
 <style id="v95-child-css">
 .ncx-v95{font-size:12px;line-height:1.5}.ncx-v95 .box{padding:10px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v95 .chapter{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v95 .active{border-left:3px solid #b99b61}.ncx-v95 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v95 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v95 button:hover{border-color:#b99b61}.ncx-v95 .quote{padding:9px;border-left:3px solid #8795a8;background:#151b22;font-style:italic}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v95-child-depth">
 (()=> {
@@ -11349,6 +11862,15 @@ setTimeout(inject,1650);
 
 <style id="v96-presence-css">
 .ncx-v96{font-size:12px;line-height:1.5}.ncx-v96 .box{padding:10px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v96 .chapter{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v96 .active{border-left:3px solid #b99b61}.ncx-v96 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v96 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v96 button:hover{border-color:#b99b61}.ncx-v96 .quote{padding:9px;border-left:3px solid #8795a8;background:#151b22;font-style:italic}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v96-presence-depth">
 (()=> {
@@ -11414,6 +11936,15 @@ setTimeout(inject,1650);
 
 <style id="v97-story-css">
 .ncx-v97{font-size:12px;line-height:1.5}.ncx-v97 .box{padding:10px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v97 .chapter{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v97 .active{border-left:3px solid #b99b61}.ncx-v97 .done{opacity:.75}.ncx-v97 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v97 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v97 button:hover{border-color:#b99b61}.ncx-v97 .quote{padding:9px;border-left:3px solid #8795a8;background:#151b22;font-style:italic}.ncx-v97 .meter{height:7px;background:#202833;border-radius:5px;overflow:hidden}.ncx-v97 .fill{height:100%;background:#8795a8}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v97-main-story">
 (()=> {
@@ -11516,6 +12047,15 @@ setTimeout(inject,1650);
 
 <style id="v98-area-chapters-css">
 .ncx-v98{font-size:12px;line-height:1.5}.ncx-v98 .box{padding:10px;margin:7px 0;background:#0d1218;border:1px solid #29323c;border-radius:7px}.ncx-v98 .chapter{padding:9px;margin:6px 0;background:#111820;border:1px solid #303b46;border-radius:6px}.ncx-v98 .active{border-left:3px solid #b99b61}.ncx-v98 .tag{display:inline-block;padding:2px 6px;margin:2px;border:1px solid #343d47;border-radius:4px}.ncx-v98 button{padding:6px 9px;margin:3px;background:#151b22;color:#ddd;border:1px solid #39424d;border-radius:5px}.ncx-v98 button:hover{border-color:#b99b61}.ncx-v98 textarea{width:100%;box-sizing:border-box;background:#0b1015;color:#ddd;border:1px solid #39424d;border-radius:5px;padding:8px;min-height:75px}.ncx-v98 .meter{height:7px;background:#202833;border-radius:5px;overflow:hidden}.ncx-v98 .fill{height:100%;background:#8795a8}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v98-area-chapters">
 (()=> {
@@ -11589,6 +12129,15 @@ setTimeout(inject,1650);
 
 <style id="v100-story-css">
 .ncx-v100-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v100-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v100-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v100-story p{margin:0 0 13px}.ncx-v100-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v100-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <div class="ncx-story ncx-v100-story">
@@ -12191,6 +12740,15 @@ setTimeout(inject,1650);
 
 <style id="v101-story-css">
 .ncx-v101-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v101-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v101-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v101-story p{margin:0 0 13px}.ncx-v101-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v101-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <div class="ncx-story ncx-v101-story">
@@ -12796,7 +13354,16 @@ setTimeout(inject,1650);
 <div class="chapter-end"><strong>END OF CHAPTER THREE</strong><br><span>Next: Chapter Four — Main Street</span></div>
 </div>
 
-<style id="v102-story-css">.ncx-v102-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v102-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v102-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v102-story p{margin:0 0 13px}.ncx-v102-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v102-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}</style><div class="ncx-story ncx-v102-story">
+<style id="v102-story-css">.ncx-v102-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v102-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v102-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v102-story p{margin:0 0 13px}.ncx-v102-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v102-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
+</style><div class="ncx-story ncx-v102-story">
 <h2>CHAPTER FOUR — MAIN STREET</h2>
 <p class="story-meta">Area chapter · Witness investigation · Chupacabra / Goatman leads · Social stealth</p>
 <h3>BACK IN TOWN</h3>
@@ -12827,6 +13394,15 @@ setTimeout(inject,1650);
 .ecology-grid article h3{margin-top:0}
 .ecology-grid p{font-size:13px}
 .ecology-note{margin-top:24px;padding:15px;border-left:3px solid #66717c;background:#111820}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <section class="ncx-ecology">
@@ -12872,6 +13448,15 @@ setTimeout(inject,1650);
 
 <style id="v104-story-css">
 .ncx-v104-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v104-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v104-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v104-story p{margin:0 0 13px}.ncx-v104-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v104-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
@@ -13168,61 +13753,169 @@ you chose beneath the county.</p>
 
 <style id="v105-story-css">
 .ncx-v105-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v105-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v105-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v105-story p{margin:0 0 13px}.ncx-v105-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v105-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v106-story-css">
 .ncx-v106-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v106-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v106-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v106-story p{margin:0 0 13px}.ncx-v106-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v106-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v107-story-css">
 .ncx-v107-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v107-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v107-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v107-story p{margin:0 0 13px}.ncx-v107-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v107-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v108-story-css">
 .ncx-v108-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v108-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v108-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v108-story p{margin:0 0 13px}.ncx-v108-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v108-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v109-story-css">
 .ncx-v109-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v109-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v109-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v109-story p{margin:0 0 13px}.ncx-v109-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v109-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v110-story-css">
 .ncx-v110-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v110-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v110-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v110-story p{margin:0 0 13px}.ncx-v110-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v110-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v111-story-css">
 .ncx-v111-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v111-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v111-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v111-story p{margin:0 0 13px}.ncx-v111-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v111-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v112-story-css">
 .ncx-v112-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v112-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v112-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v112-story p{margin:0 0 13px}.ncx-v112-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v112-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v113-story-css">
 .ncx-v113-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v113-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v113-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v113-story p{margin:0 0 13px}.ncx-v113-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v113-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v114-story-css">
 .ncx-v114-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v114-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v114-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v114-story p{margin:0 0 13px}.ncx-v114-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v114-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v115-story-css">
 .ncx-v115-story{max-width:820px;margin:18px auto;padding:20px 24px;background:#0b1015;color:#d7dbe0;font-family:Georgia,serif;line-height:1.75;border:1px solid #29323c;border-radius:8px}.ncx-v115-story h2{font-family:Arial,sans-serif;letter-spacing:.08em;border-bottom:1px solid #39424d;padding-bottom:12px}.ncx-v115-story h3{font-family:Arial,sans-serif;letter-spacing:.05em;margin-top:30px}.ncx-v115-story p{margin:0 0 13px}.ncx-v115-story .story-meta{font-family:Arial,sans-serif;font-size:11px;color:#929da9}.ncx-v115-story .chapter-end{margin-top:32px;padding:18px;text-align:center;border-top:1px solid #39424d;border-bottom:1px solid #39424d;font-family:Arial,sans-serif;letter-spacing:.05em}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
 <style id="v116-father-history-css">
 .ncx-father-history{max-width:1050px;margin:32px auto;padding:26px;background:#0a0e13;color:#d8dde4;border:1px solid #303a45;border-radius:10px;font-family:Arial,sans-serif}.fh-header{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;border-bottom:1px solid #39434f;padding-bottom:22px}.fh-kicker{font-size:10px;letter-spacing:.16em;color:#8e9aa7}.fh-header h2{font-size:30px;letter-spacing:.08em;margin:8px 0}.fh-header p{max-width:680px;color:#aab3bd;margin:0;line-height:1.5}.fh-progress{min-width:130px;text-align:right}.fh-progress strong{display:block;font-size:25px}.fh-progress span{font-size:9px;letter-spacing:.12em;color:#7f8b97}.fh-warning{margin:18px 0;padding:12px 14px;border:1px solid #3b444e;background:#11171d;display:flex;gap:12px;align-items:center;font-size:11px;line-height:1.45;color:#aeb7c0}.fh-dot{width:8px;height:8px;border-radius:50%;background:#a5b0bb;display:block;flex:none}.fh-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.fh-card{min-height:112px;text-align:left;padding:14px;background:#10161c;color:#cfd5db;border:1px solid #303a45;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.fh-card:hover{border-color:#687481}.fh-card.locked{opacity:.62}.fh-year{font-size:10px;letter-spacing:.1em;color:#8995a0}.fh-card-title{font-weight:700;font-size:14px;letter-spacing:.03em}.fh-tag{font-size:9px;color:#87929d;letter-spacing:.1em}.fh-detail{margin-top:14px;min-height:230px;padding:24px;border:1px solid #303a45;background:#0d1319}.fh-placeholder,.fh-locked{text-align:center;padding:45px 10px;color:#88949f}.fh-placeholder span,.fh-locked strong{font-size:12px;letter-spacing:.15em}.fh-detail-top{display:flex;justify-content:space-between;color:#87939e;font-size:10px;letter-spacing:.1em}.fh-detail h3{font-size:25px;margin:12px 0 18px;letter-spacing:.05em}.fh-main{font-family:Georgia,serif;font-size:17px;line-height:1.75;max-width:780px}.fh-clue{margin-top:22px;padding:14px;border-left:2px solid #687481;background:#121920}.fh-clue strong{font-size:9px;letter-spacing:.12em}.fh-clue p{margin:7px 0 0;color:#b1bac3}.fh-locked p{margin:12px 0 8px;color:#b5bec7}.fh-locked small{color:#697581}@media(max-width:800px){.fh-timeline{grid-template-columns:repeat(2,1fr)}.fh-header{align-items:flex-start;flex-direction:column}.fh-progress{text-align:left}}@media(max-width:480px){.fh-timeline{grid-template-columns:1fr}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
@@ -13346,6 +14039,15 @@ you chose beneath the county.</p>
 
 <style id="v117-supernatural-css">
 .ncx-supernatural{max-width:1050px;margin:32px auto;padding:26px;background:#090d12;color:#d9dee5;border:1px solid #303944;border-radius:10px;font-family:Arial,sans-serif}.sr-kicker{font-size:10px;letter-spacing:.17em;color:#8995a1}.sr-header h2{font-size:30px;letter-spacing:.08em;margin:8px 0}.sr-header p{max-width:760px;color:#aab4be;line-height:1.55}.sr-status{display:flex;gap:14px;align-items:baseline;border-top:1px solid #303944;border-bottom:1px solid #303944;padding:13px 0;margin:22px 0;font-size:10px;letter-spacing:.1em;color:#87929e}.sr-status strong{font-size:23px;color:#dce1e6}.sr-note{margin-left:auto}.sr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.sr-card{min-height:125px;padding:16px;text-align:left;background:#10161d;border:1px solid #303944;color:#d8dde3;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.sr-card:hover{border-color:#687481}.sr-card.unknown{opacity:.58}.sr-num,.sr-card small{font-size:9px;letter-spacing:.12em;color:#818d99}.sr-card strong{font-size:14px;letter-spacing:.04em}.sr-detail{margin-top:14px;min-height:180px;padding:23px;border:1px solid #303944;background:#0d1319}.sr-detail>span{font-size:9px;letter-spacing:.13em;color:#87929e}.sr-detail h3{font-size:24px;margin:9px 0 14px}.sr-detail>p{font-family:Georgia,serif;font-size:16px;line-height:1.7;max-width:800px}.sr-detail div{padding:12px;border-left:2px solid #64717d;background:#111820}.sr-detail div strong{font-size:9px;letter-spacing:.12em}.sr-detail div p{margin:6px 0 0;color:#aeb7c0}@media(max-width:800px){.sr-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.sr-grid{grid-template-columns:1fr}.sr-note{display:none}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
@@ -13420,6 +14122,15 @@ you chose beneath the county.</p>
 
 <style id="v118-weather-css">
 .ncx-weather{max-width:1050px;margin:32px auto;padding:26px;background:#0a0f14;color:#d9dee4;border:1px solid #303a45;border-radius:10px;font-family:Arial,sans-serif}.wx-head{display:flex;justify-content:space-between;gap:30px;border-bottom:1px solid #343e49;padding-bottom:22px}.wx-kicker{font-size:10px;letter-spacing:.16em;color:#87939e}.wx-head h2{font-size:30px;letter-spacing:.08em;margin:8px 0}.wx-head p{max-width:720px;color:#aab4bd;line-height:1.55}.wx-current{text-align:right;min-width:170px}.wx-current span{display:block;font-size:9px;letter-spacing:.12em;color:#7f8b96}.wx-current strong{display:block;font-size:22px;margin:9px 0}.wx-current small{color:#909ba6}.wx-controls{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.wx-controls button{padding:10px 13px;background:#111820;border:1px solid #35404b;color:#cbd2d9;font-size:10px;letter-spacing:.1em;cursor:pointer}.wx-controls button:hover{border-color:#7a8793}.wx-effects{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.wx-effects span{padding:15px;background:#111820;border:1px solid #303a45;font-size:10px;letter-spacing:.08em;color:#aeb7c0}.wx-log{margin-top:14px;padding:17px;border-left:2px solid #66737f;background:#10171e;color:#aeb7c0;font-size:12px;line-height:1.55}.wx-log strong{font-size:9px;letter-spacing:.13em;color:#d2d8de}.wx-log p{margin:7px 0 0}@media(max-width:700px){.wx-head{flex-direction:column}.wx-current{text-align:left}.wx-effects{grid-template-columns:1fr}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
@@ -13485,6 +14196,15 @@ you chose beneath the county.</p>
 
 <style id="v119-environment-css">
 .ncx-environment{max-width:1050px;margin:32px auto;padding:26px;background:#090e13;color:#d9dee4;border:1px solid #303a45;border-radius:10px;font-family:Arial,sans-serif}.es-head{display:flex;justify-content:space-between;gap:30px;border-bottom:1px solid #35404b;padding-bottom:22px}.es-kicker{font-size:10px;letter-spacing:.16em;color:#87939f}.es-head h2{font-size:30px;letter-spacing:.08em;margin:8px 0}.es-head p{max-width:730px;color:#aab4bd;line-height:1.55}.es-status{min-width:190px;text-align:right}.es-status span,.es-status small{display:block;font-size:9px;letter-spacing:.12em;color:#7e8a95}.es-status strong{display:block;font-size:22px;margin:8px 0}.es-controls{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.es-controls button{padding:10px 12px;background:#111820;border:1px solid #35404b;color:#cbd2d9;font-size:9px;letter-spacing:.09em;cursor:pointer}.es-controls button:hover{border-color:#74818d}.es-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.es-grid div{padding:14px;background:#111820;border:1px solid #303a45;min-height:62px}.es-grid span{display:block;font-size:9px;color:#75818d;letter-spacing:.1em;margin-bottom:8px}.es-grid strong{font-size:12px}.es-events{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}.es-events>div{padding:16px;background:#0e151c;border-left:2px solid #65727e}.es-events strong{font-size:9px;letter-spacing:.12em}.es-events p{margin:8px 0 0;color:#aeb7c0;font-size:12px;line-height:1.5}@media(max-width:700px){.es-head{flex-direction:column}.es-status{text-align:left}.es-grid,.es-events{grid-template-columns:1fr}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
@@ -13556,6 +14276,15 @@ you chose beneath the county.</p>
 
 <style id="v120-endings-css">
 .ncx-endings{max-width:1080px;margin:32px auto;padding:28px;background:#090d12;color:#d9dee4;border:1px solid #303a45;border-radius:10px;font-family:Arial,sans-serif}.en-kicker{font-size:10px;letter-spacing:.17em;color:#87939e}.en-head h2{font-size:31px;letter-spacing:.08em;margin:8px 0}.en-head p{max-width:760px;color:#aab4bd;line-height:1.55}.en-status{margin:22px 0;padding:15px;border-top:1px solid #35404b;border-bottom:1px solid #35404b;display:flex;align-items:center;gap:12px}.en-status strong{font-size:24px}.en-status span{font-size:9px;letter-spacing:.12em;color:#85919c}.en-meter{height:3px;background:#1b232c;flex:1;margin-left:12px}.en-meter i{display:block;height:100%;background:#aeb8c2;width:0}.en-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.en-card{min-height:125px;padding:15px;text-align:left;background:#10161d;border:1px solid #303a45;color:#d8dde3;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer}.en-card:hover{border-color:#707d89}.en-card.hidden{opacity:.58}.en-card.true{border-style:dashed}.en-card span,.en-card small{font-size:9px;letter-spacing:.12em;color:#7e8a95}.en-card strong{font-size:13px;letter-spacing:.04em}.en-detail{margin-top:14px;padding:24px;min-height:240px;background:#0d1319;border:1px solid #303a45}.en-detail>span{font-size:9px;letter-spacing:.13em;color:#84909b}.en-detail h3{font-size:25px;margin:9px 0 15px}.en-summary{font-family:Georgia,serif;font-size:17px;line-height:1.7;max-width:800px}.en-columns{display:grid;grid-template-columns:1fr 1fr;gap:10px}.en-columns>div,.en-scene,.en-secret{padding:14px;background:#111820;border-left:2px solid #65727e}.en-columns strong,.en-scene strong,.en-secret strong{font-size:9px;letter-spacing:.12em}.en-columns p,.en-scene p,.en-secret p{margin:7px 0 0;color:#aeb7c0;line-height:1.55}.en-scene{margin-top:10px;font-family:Georgia,serif}.en-secret{margin-top:10px;opacity:.9}@media(max-width:850px){.en-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.en-grid,.en-columns{grid-template-columns:1fr}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
@@ -13630,6 +14359,15 @@ render();
 
 <style id="v121-true-ending-css">
 .ncx-true-ending{max-width:1050px;margin:32px auto;padding:34px;background:#07090c;color:#e0e3e6;border:1px solid #353b43;border-radius:10px;font-family:Arial,sans-serif}.te-kicker{font-size:10px;letter-spacing:.2em;color:#89929c}.te-progress{margin:20px 0 28px;height:3px;background:#1b2026;position:relative}.te-progress i{display:block;height:100%;width:0;background:#c5cbd1}.te-progress span{position:absolute;top:-17px;right:0;font-size:8px;letter-spacing:.14em;color:#7f8993}.te-scene{min-height:420px;padding:34px;border:1px solid #30363e;background:#0a0d11;display:flex;flex-direction:column;justify-content:center}.te-location{font-size:9px;letter-spacing:.18em;color:#818b95}.te-scene h2{font-family:Georgia,serif;font-size:42px;font-weight:normal;margin:18px 0}.te-scene p{font-family:Georgia,serif;font-size:20px;line-height:1.8;max-width:800px;color:#c7ccd1}.te-choice{display:flex;gap:10px;margin-top:25px;flex-wrap:wrap}.te-choice button{padding:13px 18px;background:#12171d;border:1px solid #59636d;color:#dce1e5;letter-spacing:.1em;font-size:10px;cursor:pointer}.te-choice button:hover{border-color:#c2c8ce}.te-requirements{margin-top:14px;padding:18px;background:#0d1217;border:1px solid #30363e}.te-requirements>strong{font-size:9px;letter-spacing:.15em}.te-requirements>div{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}.te-requirements button{border:1px solid #303840;background:#11171d;color:#aeb6bd;text-align:left;padding:10px;font-size:10px;cursor:pointer}.te-requirements button.met{border-color:#707b85;color:#dce1e5}.te-requirements button span{display:inline-block;width:20px}.te-requirements button.met span{color:#e0e4e8}@media(max-width:650px){.te-scene h2{font-size:31px}.te-scene p{font-size:17px}.te-requirements>div{grid-template-columns:1fr}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
@@ -13717,6 +14455,15 @@ render();
 
 <style id="v122-save-css">
 .ncx-save-system{max-width:1050px;margin:32px auto;padding:28px;background:#090e13;color:#d9dee4;border:1px solid #303a45;border-radius:10px;font-family:Arial,sans-serif}.sl-head{display:flex;justify-content:space-between;gap:25px;border-bottom:1px solid #35404b;padding-bottom:22px}.sl-kicker{font-size:10px;letter-spacing:.17em;color:#87939e}.sl-head h2{font-size:30px;letter-spacing:.08em;margin:8px 0}.sl-head p{max-width:700px;color:#aab4bd;line-height:1.55}.sl-autosave{font-size:9px;letter-spacing:.12em;color:#7e8a95;white-space:nowrap}.sl-autosave strong{display:block;font-size:18px;color:#d8dee4;margin-top:8px}.sl-slots{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:22px 0}.sl-slot{padding:17px;background:#10161d;border:1px solid #303a45}.sl-slot.active{border-color:#697580}.sl-slot-top{display:flex;justify-content:space-between;margin-bottom:18px}.sl-slot-top span{font-size:9px;letter-spacing:.13em}.sl-slot-top small{font-size:9px;color:#7d8994}.sl-slot strong{font-size:16px}.sl-slot p{font-size:11px;color:#98a3ad;margin:7px 0 15px}.sl-slot-buttons{display:flex;gap:7px;flex-wrap:wrap}.sl-slot button,.sl-actions button{background:#111820;border:1px solid #3b4651;color:#cbd2d8;padding:9px 12px;font-size:9px;letter-spacing:.1em;cursor:pointer}.sl-slot button:hover,.sl-actions button:hover{border-color:#78848f}.sl-actions{display:flex;gap:8px;flex-wrap:wrap}.sl-info{margin-top:14px;padding:15px;background:#0e151c;border-left:2px solid #64717c}.sl-info strong{font-size:9px;letter-spacing:.13em}.sl-info p{font-size:11px;color:#aab3bb;margin:8px 0 0}@media(max-width:650px){.sl-head{flex-direction:column}.sl-slots{grid-template-columns:1fr}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 
@@ -13970,6 +14717,15 @@ body>script,body>style{display:none}
   .n126-grid,.n126-choice-row{grid-template-columns:1fr}
   .n126-modal-card{padding:18px}
 }
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 
 <div id="ncx-v126-shell">
@@ -14215,6 +14971,15 @@ body>script,body>style{display:none}
 <style id="v128-production-css">
 .v128-panel{border:1px solid #3b4650;background:#0d1217;padding:12px;margin-top:12px}.v128-panel h3{margin:0 0 8px;color:#e7ddc9;font:14px Arial,sans-serif;letter-spacing:.08em}.v128-chapters{display:grid;grid-template-columns:1fr 1fr;gap:7px}.v128-ch{border:1px solid #29323a;padding:8px;background:#10161c}.v128-ch.active{border-color:#c9a96e;box-shadow:inset 3px 0 #c9a96e}.v128-ch.done{opacity:.65}.v128-ch b{font:12px Arial,sans-serif}.v128-ch span{display:block;color:#8e968e;font-size:11px;margin-top:3px}.v128-weak{font-size:12px;color:#aeb7b2}.v128-pill{display:inline-block;border:1px solid #394650;padding:2px 6px;margin:2px;color:#aeb7b2;font-size:10px}
 @media(max-width:650px){.v128-chapters{grid-template-columns:1fr}}
+
+.nc-actions button{font:10px monospace;letter-spacing:1px}
+#nc-context-actions:empty{display:none}
+.nc-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;z-index:100}
+.nc-modal{width:min(680px,90vw);max-height:78vh;overflow:auto;background:#15171b;border:1px solid #777;padding:22px;box-shadow:0 20px 80px #000}
+.nc-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383a40;margin-bottom:14px}
+.nc-modal-head h2{font:13px monospace;letter-spacing:2px}
+.nc-modal-row{padding:12px 4px;border-bottom:1px solid #2d2f34;font-size:14px;line-height:1.5}
+.nc-modal-muted{padding:20px 4px;color:#8e9198;font-size:13px}
 </style>
 <script id="v128-production-pass">
 (()=>{
@@ -14345,203 +15110,32 @@ body>script,body>style{display:none}
 })();
 </script>
 
-<script id="nocturne-final-integration">
-(function(){
+
+<script id="nocturne-chapters-1-12">(function(){
+window.nocturneChapter1={"id": 1, "title": "THE FIRST TRACK", "cryptid": "BIGFOOT", "location": "Black Pine", "scenes": [{"id": "arrival", "title": "THE FIRST TRACK", "text": "You arrive in Black Pine after three hikers vanish. The first tracks are enormous, but the stride is wrong. Something has been watching the search party.", "evidence": ["BIGFOOT evidence", "Black Pine case file"], "choices": [{"label": "Search the trail", "next": "scene1"}, {"label": "Follow the tracks", "next": "scene2"}, {"label": "Set a silent camera", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the search the trail approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["BIGFOOT clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Mothlet. It is not the target. It is guarding the route.", "evidence": ["BIGFOOT clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the BIGFOOT. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["BIGFOOT clue 3"], "choices": [{"label": "Continue", "next": "chapter2"}, {"label": "Investigate further", "next": "chapter2"}]}]};window.nocturneChapter2={"id": 2, "title": "BLOOD ON THE FENCE", "cryptid": "CHUPACABRA", "location": "Mercy Farm", "scenes": [{"id": "arrival", "title": "BLOOD ON THE FENCE", "text": "Livestock are found drained and arranged in a pattern. Chupacabra pups stalk the fields while something larger watches from the hills.", "evidence": ["CHUPACABRA evidence", "Mercy Farm case file"], "choices": [{"label": "Watch the fields", "next": "scene1"}, {"label": "Track the pups", "next": "scene2"}, {"label": "Question the farmer", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the watch the fields approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["CHUPACABRA clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Pale Crawler. It is not the target. It is guarding the route.", "evidence": ["CHUPACABRA clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the CHUPACABRA. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["CHUPACABRA clue 3"], "choices": [{"label": "Continue", "next": "chapter3"}, {"label": "Investigate further", "next": "chapter3"}]}]};window.nocturneChapter3={"id": 3, "title": "THE CROSSROADS", "cryptid": "GOATMAN", "location": "Old Quarry Road", "scenes": [{"id": "arrival", "title": "THE CROSSROADS", "text": "Three witnesses report a horned figure appearing whenever headlights cross the abandoned quarry road. Your first encounter leaves footprints that change shape.", "evidence": ["GOATMAN evidence", "Old Quarry Road case file"], "choices": [{"label": "Wait in the dark", "next": "scene1"}, {"label": "Follow the hoofprints", "next": "scene2"}, {"label": "Set a perimeter", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the wait in the dark approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["GOATMAN clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Chupacabra Pup. It is not the target. It is guarding the route.", "evidence": ["GOATMAN clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the GOATMAN. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["GOATMAN clue 3"], "choices": [{"label": "Continue", "next": "chapter4"}, {"label": "Investigate further", "next": "chapter4"}]}]};window.nocturneChapter4={"id": 4, "title": "THE STAR IN THE WOODS", "cryptid": "FLATWOODS MONSTER", "location": "Flatwoods Ridge", "scenes": [{"id": "arrival", "title": "THE STAR IN THE WOODS", "text": "A red light descends beyond the ridge. The air smells of metal and ozone. Something tall moves between the trees without bending them.", "evidence": ["FLATWOODS MONSTER evidence", "Flatwoods Ridge case file"], "choices": [{"label": "Approach the light", "next": "scene1"}, {"label": "Observe from cover", "next": "scene2"}, {"label": "Collect residue", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the approach the light approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["FLATWOODS MONSTER clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Dog Skinwalker. It is not the target. It is guarding the route.", "evidence": ["FLATWOODS MONSTER clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the FLATWOODS MONSTER. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["FLATWOODS MONSTER clue 3"], "choices": [{"label": "Continue", "next": "chapter5"}, {"label": "Investigate further", "next": "chapter5"}]}]};window.nocturneChapter5={"id": 5, "title": "WHITEOUT", "cryptid": "YETI", "location": "North Range", "scenes": [{"id": "arrival", "title": "WHITEOUT", "text": "A blizzard arrives without warning. Rescue calls come from a mountain cabin that has been abandoned for twenty years. Juvenile tracks surround it.", "evidence": ["YETI evidence", "North Range case file"], "choices": [{"label": "Enter the cabin", "next": "scene1"}, {"label": "Track the prints", "next": "scene2"}, {"label": "Climb above the storm", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the enter the cabin approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["YETI clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Mothlet. It is not the target. It is guarding the route.", "evidence": ["YETI clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the YETI. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["YETI clue 3"], "choices": [{"label": "Continue", "next": "chapter6"}, {"label": "Investigate further", "next": "chapter6"}]}]};window.nocturneChapter6={"id": 6, "title": "THE HUNGER", "cryptid": "WENDIGO", "location": "White Forest", "scenes": [{"id": "arrival", "title": "THE HUNGER", "text": "The forest has frozen in summer. The Wendigo appears at the edge of the trees, but it is not hunting you. It is fleeing something deeper.", "evidence": ["WENDIGO evidence", "White Forest case file"], "choices": [{"label": "Follow the Wendigo", "next": "scene1"}, {"label": "Search the frozen camp", "next": "scene2"}, {"label": "Hide and observe", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the follow the wendigo approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["WENDIGO clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Pale Crawler. It is not the target. It is guarding the route.", "evidence": ["WENDIGO clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the WENDIGO. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["WENDIGO clue 3"], "choices": [{"label": "Continue", "next": "chapter7"}, {"label": "Investigate further", "next": "chapter7"}]}]};window.nocturneChapter7={"id": 7, "title": "BORROWED VOICES", "cryptid": "SKINWALKERS", "location": "Old Mercy", "scenes": [{"id": "arrival", "title": "BORROWED VOICES", "text": "Someone calls your name from the woods using a voice you know. Dog Skinwalkers circle the settlement and wait for you to answer.", "evidence": ["SKINWALKERS evidence", "Old Mercy case file"], "choices": [{"label": "Answer the voice", "next": "scene1"}, {"label": "Stay silent", "next": "scene2"}, {"label": "Test the caller", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the answer the voice approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["SKINWALKERS clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Chupacabra Pup. It is not the target. It is guarding the route.", "evidence": ["SKINWALKERS clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the SKINWALKERS. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["SKINWALKERS clue 3"], "choices": [{"label": "Continue", "next": "chapter8"}, {"label": "Investigate further", "next": "chapter8"}]}]};window.nocturneChapter8={"id": 8, "title": "THE SILENT SKY", "cryptid": "UFOS", "location": "Mercy Airfield", "scenes": [{"id": "arrival", "title": "THE SILENT SKY", "text": "Every radio in the county receives the same impossible signal. Lights hover over the airfield. Little Grey Aliens appear only when nobody is looking directly at them.", "evidence": ["UFOS evidence", "Mercy Airfield case file"], "choices": [{"label": "Enter the hangar", "next": "scene1"}, {"label": "Watch the sky", "next": "scene2"}, {"label": "Trace the signal", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the enter the hangar approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["UFOS clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Dog Skinwalker. It is not the target. It is guarding the route.", "evidence": ["UFOS clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the UFOS. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["UFOS clue 3"], "choices": [{"label": "Continue", "next": "chapter9"}, {"label": "Investigate further", "next": "chapter9"}]}]};window.nocturneChapter9={"id": 9, "title": "THE RED WATCHER", "cryptid": "MOTHMAN", "location": "Blackwater Bridge", "scenes": [{"id": "arrival", "title": "THE RED WATCHER", "text": "Mothman appears above the bridge while the county's emergency systems fail. It is watching the same point in the forest as you are.", "evidence": ["MOTHMAN evidence", "Blackwater Bridge case file"], "choices": [{"label": "Approach the bridge", "next": "scene1"}, {"label": "Follow its gaze", "next": "scene2"}, {"label": "Protect the witnesses", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the approach the bridge approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["MOTHMAN clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Mothlet. It is not the target. It is guarding the route.", "evidence": ["MOTHMAN clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the MOTHMAN. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["MOTHMAN clue 3"], "choices": [{"label": "Continue", "next": "chapter10"}, {"label": "Investigate further", "next": "chapter10"}]}]};window.nocturneChapter10={"id": 10, "title": "THE HUNT", "cryptid": "BIGFOOT", "location": "Black Pine Reserve", "scenes": [{"id": "arrival", "title": "THE HUNT", "text": "The evidence now points to a coordinated movement between cryptid territories. Bigfoot is leading something away from the county centre.", "evidence": ["BIGFOOT evidence", "Black Pine Reserve case file"], "choices": [{"label": "Follow the herd", "next": "scene1"}, {"label": "Intercept the route", "next": "scene2"}, {"label": "Study the tracks", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the follow the herd approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["BIGFOOT clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Pale Crawler. It is not the target. It is guarding the route.", "evidence": ["BIGFOOT clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the BIGFOOT. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["BIGFOOT clue 3"], "choices": [{"label": "Continue", "next": "chapter11"}, {"label": "Investigate further", "next": "chapter11"}]}]};window.nocturneChapter11={"id": 11, "title": "THE BROKEN BOUNDARY", "cryptid": "MOTHMAN", "location": "County Centre", "scenes": [{"id": "arrival", "title": "THE BROKEN BOUNDARY", "text": "The first anchor begins to fail. Every cryptid territory reacts. The creatures are moving toward the centre rather than away from it.", "evidence": ["MOTHMAN evidence", "County Centre case file"], "choices": [{"label": "Secure the anchor", "next": "scene1"}, {"label": "Follow Mothman", "next": "scene2"}, {"label": "Call Lucas", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the secure the anchor approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["MOTHMAN clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Chupacabra Pup. It is not the target. It is guarding the route.", "evidence": ["MOTHMAN clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the MOTHMAN. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["MOTHMAN clue 3"], "choices": [{"label": "Continue", "next": "chapter12"}, {"label": "Investigate further", "next": "chapter12"}]}]};window.nocturneChapter12={"id": 12, "title": "THE WITNESS RECORD", "cryptid": "SKINWALKERS", "location": "Old Mercy", "scenes": [{"id": "arrival", "title": "THE WITNESS RECORD", "text": "Father's records reveal the first witness chain. Skinwalkers guard the underground archive and imitate the voices of everyone you've lost.", "evidence": ["SKINWALKERS evidence", "Old Mercy case file"], "choices": [{"label": "Enter the archive", "next": "scene1"}, {"label": "Move silently", "next": "scene2"}, {"label": "Find Father's record", "next": "scene3"}]}, {"id": "scene1", "title": "THE APPROACH", "text": "You take the enter the archive approach. The environment reacts before the creature does. A trail of evidence leads deeper into the case.", "evidence": ["SKINWALKERS clue 1"], "choices": [{"label": "Continue", "next": "scene2"}, {"label": "Investigate further", "next": "scene2"}]}, {"id": "scene2", "title": "THE ENCOUNTER", "text": "A weaker cryptid emerges from the area: a Dog Skinwalker. It is not the target. It is guarding the route.", "evidence": ["SKINWALKERS clue 2"], "choices": [{"label": "Continue", "next": "scene3"}, {"label": "Investigate further", "next": "scene3"}]}, {"id": "scene3", "title": "THE REVELATION", "text": "You find a clue connected to the SKINWALKERS. The clue also points toward the county centre, where Father's investigation appears to have ended.", "evidence": ["SKINWALKERS clue 3"], "choices": [{"label": "Continue", "next": "chapter13"}, {"label": "Investigate further", "next": "chapter13"}]}]};
+for(let i=1;i<=12;i++){const c=window['nocturneChapter'+i]; c.scenes.forEach(s=>{s.choices.forEach(x=>{if(x.next==='chapter'+(i+1))x.next='chapter'+(i+1);});});}
+})();</script>
+
+<script id="nocturne-final-integration">(function(){
 "use strict";
-
 const NS="nocturneCountyFinal";
-const defaults={
- chapter:1, scene:null, flags:{}, stats:{health:100,stamina:100,stress:0},
- inventory:["Field Notebook","Flashlight"], evidence:[], memories:[],
- anchors:{north:true,south:true,east:true,west:true,forest:true,mountain:true,marsh:true,settlement:true,centre:true},
- relationships:{mara:0,lucas:0,father:0},
- skills:{stealth:1,combat:1,investigation:1},
- weather:"Overcast", time:"Night", audio:true, volume:0.55,
- ending:null, completed:false, playthroughs:0, log:[]
-};
-let state=load()||structuredClone(defaults);
-
-function save(){
- localStorage.setItem(NS,JSON.stringify(state));
- toast("Game saved");
-}
-function load(){
- try{const x=localStorage.getItem(NS); return x?Object.assign(structuredClone(defaults),JSON.parse(x)):null}catch(e){return null}
-}
-function toast(t){
- let x=document.getElementById("nc-toast"); if(!x){x=document.createElement("div");x.id="nc-toast";document.body.appendChild(x)}
- x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1400);
-}
+const defaults={chapter:1,scene:"arrival",flags:{},stats:{health:100,stamina:100,stress:0},inventory:["Field Notebook","Flashlight"],evidence:[],memories:[],anchors:{north:true,south:true,east:true,west:true,forest:true,mountain:true,marsh:true,settlement:true,centre:true},relationships:{mara:0,lucas:0,father:0},skills:{stealth:1,combat:1,investigation:1},weather:"Overcast",time:"Night",audio:true,ending:null,completed:false,playthroughs:0,log:[]};
+let state=(()=>{try{return JSON.parse(localStorage.getItem(NS))||structuredClone(defaults)}catch(e){return structuredClone(defaults)}})();
+if(!state.chapter||!window["nocturneChapter"+state.chapter]){state=structuredClone(defaults)}
+function save(){localStorage.setItem(NS,JSON.stringify(state));toast("SAVED")}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-function activeChapter(n){
- return window["nocturneChapter"+n] || null;
-}
-function chapterScene(n,id){
- const c=activeChapter(n); if(!c)return null;
- return c.scenes.find(s=>s.id===id)||c.scenes[0];
-}
-function log(t){state.log.push({t,at:new Date().toISOString()}); if(state.log.length>100)state.log.shift()}
-function addEvidence(e){if(e&&!state.evidence.includes(e))state.evidence.push(e)}
-function weatherFor(ch){
- const arr=["Clear","Fog","Rain","Heavy Rain","Snow","Whiteout","Storm"];
- return arr[(ch*3+state.playthroughs)%arr.length];
-}
-function cryptidFor(ch){
- const a=["Pale Crawlers","Little Grey Aliens","Juvenile Sasquatch","Chupacabra Pups","Dog Skinwalkers","Mothlets","The Wendigo","Skinwalkers","Mothman","The Presence"];
- return a[Math.min(a.length-1,Math.max(0,ch-1))];
-}
-function render(){
- document.body.innerHTML=`
- <div id="nc-app">
-  <header class="nc-top">
-   <div><div class="nc-kicker">NOCTURNE COUNTY</div><h1>FIELD CASE // ${String(state.chapter).padStart(2,"0")}</h1></div>
-   <div class="nc-actions">
-    <button data-act="save">SAVE</button><button data-act="load">LOAD</button><button data-act="new">NEW GAME</button>
-   </div>
-  </header>
-  <main class="nc-grid">
-   <aside class="nc-panel nc-left">
-    <section><h2>STATUS</h2>
-     <div class="nc-stat"><span>HEALTH</span><b>${state.stats.health}</b></div>
-     <div class="nc-bar"><i style="width:${state.stats.health}%"></i></div>
-     <div class="nc-stat"><span>STAMINA</span><b>${state.stats.stamina}</b></div>
-     <div class="nc-bar"><i style="width:${state.stats.stamina}%"></i></div>
-     <div class="nc-stat"><span>STRESS</span><b>${state.stats.stress}</b></div>
-    </section>
-    <section><h2>ENVIRONMENT</h2><p>${esc(state.weather)} · ${esc(state.time)}</p><p>Area threat: <b>${esc(cryptidFor(state.chapter))}</b></p></section>
-    <section><h2>RELATIONSHIPS</h2><p>Mara <b>${state.relationships.mara}</b></p><p>Lucas <b>${state.relationships.lucas}</b></p><p>Father <b>${state.relationships.father}</b></p></section>
-    <section><h2>EVIDENCE <span>${state.evidence.length}</span></h2><div class="nc-list">${state.evidence.slice(-8).map(esc).map(x=>`<div>${x}</div>`).join("")||"<div>None yet.</div>"}</div></section>
-   </aside>
-   <section class="nc-main">
-    <div class="nc-location">${esc(state.weather)} / ${esc(state.time)} / ${esc(cryptidFor(state.chapter))}</div>
-    <div id="nc-scene"></div>
-   </section>
-   <aside class="nc-panel nc-right">
-    <section><h2>INVENTORY</h2><div class="nc-list">${state.inventory.map(esc).map(x=>`<div>${x}</div>`).join("")}</div></section>
-    <section><h2>OBJECTIVES</h2><div class="nc-list">
-      <div>Investigate the current area</div><div>Gather evidence</div><div>Survive the encounter</div><div>Advance the investigation</div>
-    </div></section>
-    <section><h2>CASE LOG</h2><div class="nc-log">${state.log.slice(-6).map(x=>`<div>${esc(x.t)}</div>`).join("")}</div></section>
-    <section><h2>AUDIO</h2><button data-act="audio">${state.audio?"AUDIO ON":"AUDIO OFF"}</button></section>
-   </aside>
-  </main>
- </div>`;
- const s=state.scene?chapterScene(state.chapter,state.scene):chapterScene(state.chapter);
- if(!s){renderMenu();return}
- state.scene=s.id;
- const box=document.getElementById("nc-scene");
- box.innerHTML=`
-   <div class="nc-chapter">CHAPTER ${state.chapter} · ${esc(activeChapter(state.chapter)?.title||"INVESTIGATION")}</div>
-   <h2 class="nc-title">${esc(s.title)}</h2>
-   <p class="nc-story">${esc(s.text)}</p>
-   ${s.evidence?.length?`<div class="nc-evidence">${s.evidence.map(esc).map(x=>`<span>◈ ${x}</span>`).join("")}</div>`:""}
-   <div class="nc-tactical">
-     <button data-act="stealth">STEALTH</button>
-     <button data-act="combat">TACTICAL COMBAT</button>
-     <button data-act="investigate">INVESTIGATE</button>
-   </div>
-   <div class="nc-choices">${(s.choices||[]).map((c,i)=>`<button class="nc-choice" data-choice="${i}">${esc(c.label)}</button>`).join("")}</div>
- `;
- s.evidence?.forEach(addEvidence);
- bind();
-}
-function renderMenu(){
- document.getElementById("nc-scene").innerHTML=`<div class="nc-chapter">NOCTURNE COUNTY</div><h2 class="nc-title">CASE FILE</h2><p class="nc-story">The county remembers things that never happened. Hunt the cryptids. Follow the evidence. Decide what deserves to survive.</p>`;
-}
-function bind(){
- document.querySelectorAll("[data-choice]").forEach(b=>b.onclick=()=>{
-   const s=chapterScene(state.chapter,state.scene), c=s.choices[+b.dataset.choice];
-   if(!c)return;
-   applyChoice(s,c);
- });
- document.querySelectorAll("[data-act]").forEach(b=>b.onclick=()=>{
-   const a=b.dataset.act;
-   if(a==="save")save();
-   if(a==="load"){state=load()||structuredClone(defaults);render();toast("Game loaded")}
-   if(a==="new"){if(confirm("Start a new playthrough?")){state=structuredClone(defaults);state.playthroughs=(load()?.playthroughs||0)+1;save();render()}}
-   if(a==="audio"){state.audio=!state.audio;render()}
-   if(a==="stealth")encounter("stealth");
-   if(a==="combat")encounter("combat");
-   if(a==="investigate")investigate();
- });
-}
-function applyChoice(s,c){
- const label=c.label.toLowerCase();
- if(label.includes("mara"))state.relationships.mara+=2;
- if(label.includes("lucas"))state.relationships.lucas+=2;
- if(label.includes("father"))state.relationships.father+=2;
- if(label.includes("trust"))state.relationships.mara+=2;
- if(label.includes("forgive"))state.relationships.lucas+=3;
- if(label.includes("push her away"))state.relationships.mara-=3;
- if(label.includes("preserve"))state.flags.preserve=true;
- if(label.includes("force")||label.includes("concentrate"))state.flags.concentrate=true;
- if(label.includes("witness"))state.flags.witness=true;
- if(label.includes("refuse"))state.flags.refuseWitness=true;
- if(label.includes("give"))state.memories.push(label);
- if(label.includes("help mothman"))state.flags.mothman=true;
- if(label.includes("move silently")||label.includes("stealth"))state.skills.stealth++;
- if(label.includes("fight"))state.skills.combat++;
- state.flags["ch"+state.chapter+"_"+s.id+"_"+c.label]=true;
- addEvidence(c.label);
- log(`Choice: ${c.label}`);
- let next=c.next;
- if(next==="chapter12"){state.chapter=12;state.scene=null}
- else if(next==="chapter13"){state.chapter=13;state.scene=null}
- else if(next==="chapter14"){state.chapter=14;state.scene=null}
- else if(next==="chapter15"){state.chapter=15;state.scene=null}
- else if(next==="credits"){state.completed=true;state.ending=evaluateEnding();save();renderEnding();return}
- else state.scene=next;
- if(state.chapter!==1 && state.scene===null)state.weather=weatherFor(state.chapter);
- state.time=state.chapter>=11?"Night":"Dusk";
- save();render();
-}
-function encounter(mode){
- const difficulty=40+state.chapter*4;
- if(mode==="stealth"){
-   const chance=Math.min(90,55+state.skills.stealth*7-state.stats.stress/4);
-   if(Math.random()*100<chance){state.stats.stamina=Math.max(0,state.stats.stamina-10);log("Stealth succeeded.");toast("Stealth succeeded");}
-   else{state.stats.health=Math.max(0,state.stats.health-12);state.stats.stress=Math.min(100,state.stats.stress+8);log("Stealth failed; detected.");toast("Detected")}
- }else{
-   const chance=Math.min(90,50+state.skills.combat*7);
-   if(Math.random()*100<chance){state.stats.health=Math.max(1,state.stats.health-8);log("Tactical combat won.");toast("Encounter cleared")}
-   else{state.stats.health=Math.max(0,state.stats.health-20);state.stats.stress=Math.min(100,state.stats.stress+12);log("Combat went badly.");toast("You took damage")}
- }
- save();render();
-}
-function investigate(){
- state.stats.stamina=Math.max(0,state.stats.stamina-5);
- const clues=["Unusual tracks","Audio anomaly","Cryptid spoor","Distorted photograph","Environmental sample","Witness statement"];
- const clue=clues[(state.evidence.length+state.chapter)%clues.length];
- addEvidence(`${clue} — Chapter ${state.chapter}`);
- state.skills.investigation++;
- log(`Investigation found: ${clue}`);
- toast("Evidence found");save();render();
-}
-function evaluateEnding(){
- if(state.flags.concentrate && state.flags.witness)return 9;
- if(state.flags.refuseWitness && state.relationships.mara<0)return 1;
- if(state.flags.witness && state.relationships.lucas>=3 && state.relationships.mara>=3 && state.flags.preserve)return 10;
- if(state.flags.preserve && state.flags.refuseWitness)return 3;
- if(state.relationships.mara>=4)return 4;
- if(state.memories.length>=2)return 5;
- if(state.flags.mothman)return 6;
- if(state.relationships.father>=2)return 7;
- if(state.relationships.lucas>=3)return 8;
- return 2;
-}
-function renderEnding(){
- const box=document.getElementById("nc-scene");
- box.innerHTML=`<div class="nc-chapter">CASE CLOSED</div><h2 class="nc-title">ENDING ${state.ending}</h2><p class="nc-story">Your choices have determined this version of Mercy County. Start another playthrough to uncover a different history.</p><button class="nc-choice" data-act="new">NEW PLAYTHROUGH</button>`;
- bind();
-}
-const css=document.createElement("style");
-css.textContent=`
-*{box-sizing:border-box}body{margin:0;background:#101114;color:#e7e5df;font-family:Georgia,serif}button{font:inherit;color:inherit;background:#191b20;border:1px solid #4b4d52;padding:10px 14px;cursor:pointer}button:hover{background:#24262c;border-color:#aaa}.nc-top{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;border-bottom:1px solid #36383d;background:#141519}.nc-kicker{font:12px monospace;letter-spacing:4px;opacity:.6}.nc-top h1{margin:4px 0;font-size:23px;letter-spacing:2px}.nc-actions{display:flex;gap:8px}.nc-grid{display:grid;grid-template-columns:250px minmax(400px,1fr) 250px;min-height:calc(100vh - 90px)}.nc-panel{padding:20px;border-right:1px solid #303238;background:#15171b}.nc-right{border-right:0;border-left:1px solid #303238}.nc-panel section{margin-bottom:24px}.nc-panel h2{font:11px monospace;letter-spacing:2px;color:#aeb0b5;border-bottom:1px solid #34363b;padding-bottom:8px}.nc-stat{display:flex;justify-content:space-between;font:12px monospace;margin-top:8px}.nc-bar{height:5px;background:#292b30;margin:5px 0 12px}.nc-bar i{display:block;height:100%;background:#c6c0aa}.nc-list div,.nc-log div{font-size:12px;padding:6px 0;border-bottom:1px solid #25272b}.nc-main{padding:42px 7%;background:radial-gradient(circle at 50% 10%,#24262b 0,#101114 48%)}.nc-location,.nc-chapter{font:11px monospace;letter-spacing:2px;color:#999ca3}.nc-title{font-size:42px;line-height:1.05;margin:14px 0 22px}.nc-story{font-size:19px;line-height:1.65;max-width:800px;color:#d5d2ca}.nc-evidence{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0}.nc-evidence span{font:11px monospace;padding:7px 9px;border:1px solid #42444a;background:#17191d}.nc-choices{display:grid;gap:9px;margin-top:25px}.nc-choice{text-align:left;padding:15px 17px;font-size:15px}.nc-tactical{display:flex;gap:8px;margin-top:28px}.nc-tactical button{font:11px monospace;letter-spacing:1px}.nc-choice:hover{transform:translateX(3px)}#nc-toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,15px);opacity:0;background:#e7e5df;color:#111;padding:10px 16px;font:12px monospace;transition:.2s;z-index:99}#nc-toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:900px){.nc-grid{grid-template-columns:1fr}.nc-panel{display:none}.nc-main{padding:28px 20px}.nc-title{font-size:32px}.nc-actions{flex-wrap:wrap}}
-`;
-document.head.appendChild(css);
-window.NocturneFinal={getState:()=>state,save,load,evaluateEnding,render};
-render();
-})();
-</script>
+function toast(t){let x=document.getElementById('nc-toast');if(x){x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1000)}}
+function ch(n){return window["nocturneChapter"+n]}
+function sc(){return ch(state.chapter)?.scenes.find(x=>x.id===state.scene)||ch(state.chapter)?.scenes[0]}
+function addEvidence(x){if(x&&!state.evidence.includes(x))state.evidence.push(x)}
+function log(x){state.log.push(x);state.log=state.log.slice(-8)}
+function next(n){if(n.startsWith('chapter')){let x=+n.replace('chapter','');if(x<=15){state.chapter=x;state.scene=ch(x)?.scenes[0]?.id||null;state.weather=['Overcast','Rain','Fog','Snow','Storm'][x%5];state.time=x>5?'Night':'Dusk'}}else state.scene=n;save();render()}
+function choice(c){let l=c.label.toLowerCase();if(l.includes('mara'))state.relationships.mara+=2;if(l.includes('lucas'))state.relationships.lucas+=2;if(l.includes('father'))state.relationships.father+=2;if(l.includes('trust'))state.relationships.mara+=2;if(l.includes('silently'))state.skills.stealth++;if(l.includes('fight'))state.skills.combat++;addEvidence(c.label);log('Choice: '+c.label);next(c.next)}
+function action(a){if(a==='stealth'){state.stats.stamina=Math.max(0,state.stats.stamina-8);state.stats.stress=Math.min(100,state.stats.stress+2);log('Stealth used.');toast('STEALTH')}if(a==='combat'){state.stats.health=Math.max(1,state.stats.health-8);state.stats.stress=Math.min(100,state.stats.stress+5);log('Tactical encounter resolved.');toast('COMBAT')}if(a==='investigate'){let clue=['Tracks','Audio anomaly','Residue','Witness statement','Photograph'][state.evidence.length%5]+' — Ch.'+state.chapter;addEvidence(clue);state.skills.investigation++;log('Found: '+clue);toast('EVIDENCE FOUND')}save();render()}
+function evaluate(){if(state.chapter<15)return null;if(state.flags.concentrate&&state.flags.witness)return 9;if(state.flags.witness&&state.relationships.lucas>=3&&state.relationships.mara>=3)return 10;if(state.relationships.mara>=4)return 4;if(state.memories.length>=2)return 5;if(state.relationships.lucas>=3)return 8;if(state.relationships.father>=2)return 7;return 1}
+function render(){let s=sc();document.body.innerHTML=`<div id="nc-app"><header class="nc-top"><div><div class="nc-kicker">NOCTURNE COUNTY / FIELD CASE</div><h1>CHAPTER ${String(state.chapter).padStart(2,'0')} — ${esc(ch(state.chapter)?.title||'THE INVESTIGATION')}</h1></div><div class="nc-actions"><button data-a="save">SAVE</button><button data-a="new">NEW</button></div></header><main class="nc-grid"><aside class="nc-panel"><h2>STATUS</h2><p>HEALTH <b>${state.stats.health}</b></p><p>STAMINA <b>${state.stats.stamina}</b></p><p>STRESS <b>${state.stats.stress}</b></p><h2>ENVIRONMENT</h2><p>${esc(state.weather)} · ${esc(state.time)}</p><p>THREAT: <b>${esc(ch(state.chapter)?.cryptid||'UNKNOWN')}</b></p><h2>RELATIONSHIPS</h2><p>MARA ${state.relationships.mara}</p><p>LUCAS ${state.relationships.lucas}</p><p>FATHER ${state.relationships.father}</p></aside><section class="nc-main"><div class="nc-location">${esc(ch(state.chapter)?.location||'MERCY COUNTY')}</div>${s?`<div class="nc-chapter">CHAPTER ${state.chapter}</div><h2 class="nc-title">${esc(s.title)}</h2><p class="nc-story">${esc(s.text)}</p><div class="nc-evidence">${(s.evidence||[]).map(x=>`<span>◈ ${esc(x)}</span>`).join('')}</div><div class="nc-tools"><button data-a="stealth">STEALTH</button><button data-a="combat">TACTICAL COMBAT</button><button data-a="investigate">INVESTIGATE</button></div><div class="nc-choices">${(s.choices||[]).map((x,i)=>`<button class="nc-choice" data-c="${i}">${esc(x.label)}</button>`).join('')}</div>`:`<h2 class="nc-title">CASE FILE</h2><p class="nc-story">Begin the investigation.</p><button class="nc-choice" data-a="start">START INVESTIGATION</button>`}</section><aside class="nc-panel"><h2>INVENTORY</h2>${state.inventory.map(x=>`<p>${esc(x)}</p>`).join('')}<h2>EVIDENCE ${state.evidence.length}</h2><div class="nc-list">${state.evidence.slice(-10).map(x=>`<div>${esc(x)}</div>`).join('')||'<div>None yet.</div>'}</div><h2>CASE LOG</h2>${state.log.slice(-6).map(x=>`<p>${esc(x)}</p>`).join('')}</aside></main></div><div id="nc-toast"></div>`;bind()}
+function bind(){document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{let s=sc(),c=s.choices[+b.dataset.c];if(c)choice(c)});document.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{let a=b.dataset.a;if(a==='save')save();else if(a==='new'){localStorage.removeItem(NS);state=structuredClone(defaults);render()}else if(a==='start'){state.chapter=1;state.scene='arrival';render()}else action(a)})}
+const style=document.createElement('style');style.textContent=`*{box-sizing:border-box}body{margin:0;background:#0c0d10;color:#eee;font-family:Georgia,serif}button{background:#17191d;color:#eee;border:1px solid #575a61;padding:12px 15px;font:12px monospace;letter-spacing:1px}button:hover{background:#262930;border-color:#ddd}.nc-top{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid #303239}.nc-kicker,.nc-chapter,.nc-location,h2{font-family:monospace;letter-spacing:2px}.nc-top h1{font-size:18px;margin:7px 0}.nc-actions{display:flex;gap:8px}.nc-grid{display:grid;grid-template-columns:220px 1fr 220px;min-height:calc(100vh - 75px)}.nc-panel{padding:18px;border-right:1px solid #292b30;font:12px monospace}.nc-panel:last-child{border-left:1px solid #292b30;border-right:0}.nc-panel h2{font-size:10px;color:#999;margin:18px 0 8px}.nc-main{padding:45px 8%;background:radial-gradient(circle at 50% 0,#24262b,#0c0d10 60%)}.nc-title{font-size:40px;margin:14px 0 22px}.nc-story{font-size:19px;line-height:1.65;max-width:800px}.nc-evidence{display:flex;gap:8px;flex-wrap:wrap;margin:25px 0}.nc-evidence span{font:10px monospace;border:1px solid #444;padding:7px}.nc-tools,.nc-choices{display:grid;gap:8px;margin-top:18px}.nc-tools{grid-template-columns:repeat(3,1fr)}.nc-choice{text-align:left;font-size:14px}.nc-list div{padding:6px 0;border-bottom:1px solid #292b30}@media(max-width:800px){.nc-grid{grid-template-columns:1fr}.nc-panel{display:none}.nc-main{padding:30px 20px}.nc-title{font-size:30px}.nc-tools{grid-template-columns:1fr}.nc-top h1{font-size:13px}.nc-top{align-items:flex-start}}#nc-toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#eee;color:#111;padding:9px 14px;font:11px monospace;opacity:0;pointer-events:none}#nc-toast.show{opacity:1}`;document.head.appendChild(style);render();
+})();</script>
 
 </body></html>
