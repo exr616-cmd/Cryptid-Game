@@ -1,60 +1,17 @@
-# Nocturne County V124 — Audio & Replayability
+# Nocturne County V125 — Notebook UI
 
-Final major feature package.
+The previous UI exposed every system simultaneously. V125 replaces that presentation with a focused, hand-drawn field-notebook launcher inspired by the supplied reference image.
 
-AUDIO:
-- Master volume
-- Music volume
-- Ambience volume
-- Dialogue volume
-- Dynamic audio toggle
-- Persistent audio settings
+Design: black field, rough yellow ink borders, compact case-file display, and six primary navigation actions. Features remain in the build but are accessed through focused menus instead of being dumped onto one page.
 
-The intended dynamic audio architecture supports:
-- Area ambience
-- Cryptid-specific sound profiles
-- Time-of-day layers
-- Weather layers
-- Combat music
-- Stealth tension
-- Supernatural distortion
-- Silence events
-- Character themes
-- Major story stingers
+Primary controls:
+- ACTION — opens the playable game view
+- CHARACTER
+- SETTINGS
+- INVENTORY
+- MAP
+- JOURNAL
 
-REPLAYABILITY:
-- 10-ending archive
-- Cryptid identification tracker
-- Memory tracker
-- Location tracker
-- Optional investigation tracker
-- Secret discovery tracker
-- Overall completion percentage
-- Previously discovered ending names remain available while undiscovered
-  endings stay hidden
-- New Run / New Game Plus flag
-- Discovered archive retained between runs
+Journal groups quests, evidence, investigation board, memories, cryptids and endings. Settings groups audio, save/load and replayability.
 
-Replay philosophy:
-The game should never reveal the solution to the mystery merely because the
-player has completed it once. Previously discovered evidence can remain
-available as a reference, but story knowledge still has to be interpreted by
-the player.
-
-100% completion is intended to mean:
-- All 10 endings
-- All 9 major cryptid classifications
-- All major memories
-- All county locations
-- All optional investigations
-- All secrets
-
-Integration hook:
-window.nocturneMarkReplay(type,id)
-
-Types:
-endings, cryptids, memories, locations, investigations, secrets
-
-This completes the final planned major feature. Remaining work is integration,
-story/content polish, balancing, testing, bug fixing, and final art/audio
-assets.
+No generated image is used; the appearance is built entirely with HTML/CSS.

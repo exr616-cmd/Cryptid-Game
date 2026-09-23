@@ -13858,4 +13858,85 @@ render();
 })();
 </script>
 
+
+<style id="v125-notebook-ui">
+:root{--ink:#ffbd25;--paper:#050505;--dim:#a67818;--line:#ffbd25}
+html,body{background:#000!important;color:var(--ink)!important}
+body{font-family:Arial,sans-serif!important}
+/* The old screens remain in the build, but the player only sees them through the launcher. */
+body > :not(script):not(style):not(#ncx-v125-shell):not(#n125-modal):not(#n125-legacy){display:none!important}
+body>script,body>style{display:none}
+#ncx-v125-shell{display:flex;min-height:100vh;justify-content:center;align-items:center;background:#000;padding:18px;box-sizing:border-box}
+.n125-device{width:min(100%,560px);min-height:calc(100vh - 36px);display:flex;flex-direction:column;position:relative}
+.n125-top{display:flex;align-items:center;justify-content:space-between;padding:4px 5px 14px;font-weight:900;letter-spacing:.11em;font-size:12px}
+.n125-title{font-size:20px;letter-spacing:.16em}.n125-status{font-size:10px;text-align:right;line-height:1.5}
+.n125-board{position:relative;border:5px solid var(--ink);border-radius:5px 9px 3px 7px;padding:25px 23px 22px;min-height:330px;box-sizing:border-box;box-shadow:2px 0 0 var(--ink),-1px 2px 0 var(--ink);background:#000}
+.n125-board:before,.n125-board:after{content:"";position:absolute;pointer-events:none;border:3px solid var(--ink);inset:8px 10px 12px 7px;opacity:.22;border-radius:9px 3px 8px 4px;transform:rotate(-.35deg)}
+.n125-board:after{inset:4px 6px 7px 12px;transform:rotate(.28deg);opacity:.12}
+.n125-lines{position:relative;z-index:2;display:grid;gap:20px;margin-top:15px}.n125-line{height:4px;background:var(--ink);border-radius:50%;transform:rotate(-.4deg);box-shadow:18px 1px 0 -1px var(--ink)}.n125-line:nth-child(2){width:91%;transform:rotate(.35deg)}.n125-line:nth-child(3){width:96%;transform:rotate(-.7deg)}.n125-line:nth-child(4){width:87%;transform:rotate(.5deg)}
+.n125-case{position:relative;z-index:3;border-bottom:3px solid var(--ink);padding-bottom:17px;margin-bottom:18px}.n125-case-kicker{font-size:9px;letter-spacing:.18em}.n125-case h1{font-size:29px;margin:7px 0 2px;line-height:1.05;letter-spacing:.04em}.n125-case p{font-size:11px;line-height:1.5;margin:8px 0 0;max-width:430px}.n125-meta{display:flex;gap:15px;margin-top:13px;font-size:9px;font-weight:900;letter-spacing:.12em}
+.n125-actions{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:10px;margin-top:18px}.n125-btn{appearance:none;border:4px solid var(--ink);background:#000;color:var(--ink);font-weight:900;font-size:13px;letter-spacing:.08em;padding:14px 9px;min-height:55px;cursor:pointer;border-radius:3px 7px 4px 5px;box-shadow:2px 2px 0 var(--ink);transition:transform .08s,background .08s}.n125-btn:hover{background:#211704}.n125-btn:active{transform:translate(2px,2px);box-shadow:none}.n125-btn.small{font-size:11px;min-height:48px}
+.n125-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.n125-bottom .n125-btn{min-height:62px;font-size:11px}.n125-icon{font-size:21px;display:block;margin-bottom:3px}
+.n125-hint{text-align:center;font-size:8px;letter-spacing:.14em;margin:15px 0 2px;opacity:.65}
+.n125-modal{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:100000;display:none;padding:18px;box-sizing:border-box;overflow:auto}.n125-modal.open{display:flex;justify-content:center;align-items:center}.n125-modal-card{width:min(100%,560px);border:4px solid var(--ink);background:#000;padding:20px;box-shadow:4px 4px 0 var(--ink)}.n125-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:14px}.n125-modal-head h2{margin:0;font-size:20px;letter-spacing:.12em}.n125-x{border:3px solid var(--ink);background:#000;color:var(--ink);font-size:18px;font-weight:900;width:40px;height:40px;cursor:pointer}.n125-menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.n125-menu-item{border:3px solid var(--ink);background:#000;color:var(--ink);padding:13px;text-align:left;cursor:pointer;font-weight:900}.n125-menu-item span{display:block;font-size:8px;opacity:.65;margin-top:4px;font-weight:normal}.n125-panel{display:none}.n125-panel.active{display:block}.n125-panel p{font-size:11px;line-height:1.6}.n125-list{display:grid;gap:7px}.n125-list button{border:2px solid var(--ink);background:#000;color:var(--ink);padding:10px;text-align:left;font-weight:900;cursor:pointer}
+.n125-legacy{display:none;position:fixed;inset:0;z-index:99999;background:#000;overflow:auto;padding:12px}.n125-legacy.open{display:block}.n125-legacy-back{position:sticky;top:0;z-index:3;display:block;margin:0 auto 10px;width:min(100%,560px);border:4px solid var(--ink);background:#000;color:var(--ink);padding:12px;font-weight:900;cursor:pointer}
+/* Re-skin the actual game view when ACTION is opened. */
+.n125-legacy #app{display:block!important;max-width:900px!important;margin:0 auto!important;padding:10px!important;color:var(--ink)!important;background:#000!important}.n125-legacy #app .panel,.n125-legacy #app .art,.n125-legacy #app button{background:#000!important;color:var(--ink)!important;border-color:var(--ink)!important}.n125-legacy #app .head{border-color:var(--ink)!important}.n125-legacy #app .title,.n125-legacy #app h1,.n125-legacy #app h2,.n125-legacy #app h3{color:var(--ink)!important}
+@media(max-width:500px){#ncx-v125-shell{padding:10px}.n125-device{min-height:calc(100vh - 20px)}.n125-board{min-height:310px;padding:21px 17px}.n125-case h1{font-size:25px}.n125-actions{grid-template-columns:1.2fr 1fr 1fr;gap:7px}.n125-btn{border-width:3px;padding:12px 6px;font-size:11px}.n125-bottom{gap:7px}.n125-bottom .n125-btn{min-height:57px}.n125-menu-grid{grid-template-columns:1fr}}
+</style>
+
+<div id="ncx-v125-shell">
+  <div class="n125-device">
+    <div class="n125-top"><div class="n125-title">NOCTURNE</div><div class="n125-status"><span id="n125-clock">03:17</span><br><span id="n125-weather">FOG</span></div></div>
+    <section class="n125-board">
+      <div class="n125-case"><div class="n125-case-kicker">CURRENT CASE FILE</div><h1 id="n125-case-title">THE INVESTIGATION</h1><p id="n125-case-text">The county is quiet. Too quiet. Your notebook is open, your equipment is ready, and something out there is watching.</p><div class="n125-meta"><span id="n125-location">NOCTURNE COUNTY</span><span id="n125-chapter">CH. 01</span></div></div>
+      <div class="n125-lines"><div class="n125-line"></div><div class="n125-line"></div><div class="n125-line"></div><div class="n125-line"></div></div>
+    </section>
+    <div class="n125-actions">
+      <button class="n125-btn" onclick="window.n125Action()">ACTION</button>
+      <button class="n125-btn small" onclick="window.n125Open('characters')">CHARACTER</button>
+      <button class="n125-btn small" onclick="window.n125Open('settings')">SETTINGS</button>
+    </div>
+    <div class="n125-bottom">
+      <button class="n125-btn" onclick="window.n125Open('inventory')"><span class="n125-icon">▣</span>INVENTORY</button>
+      <button class="n125-btn" onclick="window.n125Open('map')"><span class="n125-icon">⌖</span>MAP</button>
+      <button class="n125-btn" onclick="window.n125Open('journal')"><span class="n125-icon">▤</span>JOURNAL</button>
+    </div>
+    <div class="n125-hint">SELECT A FILE · DO NOT TRUST THE DARK</div>
+  </div>
+</div>
+
+<div class="n125-modal" id="n125-modal">
+ <div class="n125-modal-card">
+  <div class="n125-modal-head"><h2 id="n125-modal-title">FIELD MENU</h2><button class="n125-x" onclick="window.n125Close()">×</button></div>
+  <div id="n125-modal-body"></div>
+ </div>
+</div>
+
+<div class="n125-legacy" id="n125-legacy"><button class="n125-legacy-back" onclick="window.n125CloseAction()">← BACK TO CASE FILE</button><div id="n125-legacy-host"></div></div>
+
+<script>
+(function(){
+ const modal=document.getElementById('n125-modal'),body=document.getElementById('n125-modal-body');
+ const data={
+  inventory:{title:'INVENTORY',items:[['FIELD KIT','Medkit · Flares · Silvered Cartridges · Film · Rope'],['KEY ITEMS','Story objects and keys will appear here as they are found.'],['TOOLS','Equipment changes what you can investigate and how you can survive.']]},
+  characters:{title:'CHARACTERS',items:[['KNOWN PEOPLE','Mara · Eli · Agnes · Jonah · Claire · Boone'],['RELATIONSHIPS','What you say and do changes future conversations.'],['MEMORY','Characters remember important choices.']]},
+  map:{title:'MAP',items:[['NOCTURNE COUNTY','Explore areas, buildings, roads and hidden locations.'],['CURRENT LEAD','Use the map to decide where to investigate next.'],['ANOMALIES','Some locations change with time, weather and supernatural activity.']]},
+  journal:{title:'JOURNAL',items:[['QUESTS','Main investigation · side investigations · character threads'],['EVIDENCE','Photographs · documents · objects · unexplained traces'],['BOARD','Connect evidence, test hypotheses and find contradictions'],['MEMORIES','Recovered · fragmented · unresolved'],['CRYPTIDS','Bigfoot · Chupacabra · Goatman · Flatwoods Monster · Yeti · Wendigo · Skinwalkers · UFOs · Mothman'],['ENDINGS','Ten endings and the True Ending are tracked here']]},
+  settings:{title:'SETTINGS',items:[['AUDIO','Master · Music · Ambience · Dialogue · Dynamic Audio'],['SAVE / LOAD','Four manual slots · Quick Save · Quick Load · Autosave'],['REPLAY','Ending archive · discoveries · 100% completion']]}
+ };
+ function open(name){const d=data[name]||data.journal;document.getElementById('n125-modal-title').textContent=d.title;body.innerHTML='<div class="n125-list">'+d.items.map((x,i)=>`<button onclick="window.n125Notice('${String(x[0]).replaceAll("'","\\'")}')"><b>${x[0]}</b><span>${x[1]}</span></button>`).join('')+'</div>';modal.classList.add('open')}
+ window.n125Open=open;window.n125Close=()=>modal.classList.remove('open');window.n125Notice=(s)=>{if(window.nocturneUIToast)window.nocturneUIToast(s);else alert(s)};
+ window.n125Action=()=>{document.getElementById('n125-legacy').classList.add('open');const host=document.getElementById('n125-legacy-host');const app=document.getElementById('app');if(app&&!host.contains(app))host.appendChild(app);app.style.display='block';try{if(window.render)window.render()}catch(e){}};
+ window.n125CloseAction=()=>{document.getElementById('n125-legacy').classList.remove('open');const app=document.getElementById('app');if(app)document.body.insertBefore(app,document.body.children[1]);app.style.display='none';};
+ function sync(){
+   const s=window.S||{};document.getElementById('n125-location').textContent=(window.nocturneLocation||s.loc||'NOCTURNE COUNTY').toString().toUpperCase();document.getElementById('n125-chapter').textContent='CH. '+String(window.nocturneChapter||s.chapter||1).padStart(2,'0');
+   document.getElementById('n125-clock').textContent=window.nocturneTime||((s.hour!==undefined?String(s.hour).padStart(2,'0'):'03')+':17');
+   document.getElementById('n125-weather').textContent=(localStorage.getItem('nocturne_weather_state')||'FOG').toUpperCase();
+ }
+ sync();setInterval(sync,1000);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){window.n125Close();if(document.getElementById('n125-legacy').classList.contains('open'))window.n125CloseAction()}});
+})();
+</script>
+
 </body></html>
