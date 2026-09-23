@@ -1,17 +1,34 @@
-# Nocturne County V125 — Notebook UI
+# Nocturne County V145 — Chapter 15 Full Content Pass
 
-The previous UI exposed every system simultaneously. V125 replaces that presentation with a focused, hand-drawn field-notebook launcher inspired by the supplied reference image.
+Chapter 15: THE WITNESS
+Final chapter.
 
-Design: black field, rough yellow ink borders, compact case-file display, and six primary navigation actions. Features remain in the build but are accessed through focused menus instead of being dumped onto one page.
+This chapter is designed as a consequence engine rather than a linear ending.
 
-Primary controls:
-- ACTION — opens the playable game view
-- CHARACTER
-- SETTINGS
-- INVENTORY
-- MAP
-- JOURNAL
+Final variables intended to matter:
+- Anchor survival
+- Which anchor was sacrificed
+- Memory sacrifices
+- Stealth/combat approach
+- Mara trust and partnership
+- Lucas's control/redemption path
+- Father's fate
+- Relationship with the Presence
+- Whether the player willingly witnesses the Presence
+- Prior investigation/evidence state
 
-Journal groups quests, evidence, investigation board, memories, cryptids and endings. Settings groups audio, save/load and replayability.
+Ten endings are authored:
+1. The Dawn
+2. The Last Witness
+3. The Closed Door
+4. The Broken Chain
+5. The Price
+6. The Watcher
+7. The Inheritor
+8. The Sacrifice
+9. The Opening
+10. True Ending — The Witness
 
-No generated image is used; the appearance is built entirely with HTML/CSS.
+True Ending requirements are intentionally tied to accumulated story knowledge and character choices rather than a single final dialogue selection.
+
+The final chapter also preserves the game's central premise: the cryptids are not simply monsters. Many are part of the boundary around the Presence.

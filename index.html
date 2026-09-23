@@ -2162,6 +2162,12 @@ function endings(){
  return out[0];
 }
 
+/* V127 bridge: expose the live narrative engine to the notebook UI. */
+window.nocturneGetScene = function(){ return SCENES[sceneId] || null; };
+window.nocturneGetCombat = function(){ return combat; };
+window.nocturneGetSceneText = function(){ var sc=SCENES[sceneId]; return sc ? sceneText(sc) : ""; };
+window.nocturneGetSceneId = function(){ return sceneId; };
+
 function choose(i){
  const sc=SCENES[sceneId]; if(!sc)return;
  const ch=sc.choices[i]; if(!ch)return;
@@ -13859,83 +13865,682 @@ render();
 </script>
 
 
-<style id="v125-notebook-ui">
-:root{--ink:#ffbd25;--paper:#050505;--dim:#a67818;--line:#ffbd25}
-html,body{background:#000!important;color:var(--ink)!important}
-body{font-family:Arial,sans-serif!important}
-/* The old screens remain in the build, but the player only sees them through the launcher. */
-body > :not(script):not(style):not(#ncx-v125-shell):not(#n125-modal):not(#n125-legacy){display:none!important}
+
+<style id="v126-notebook-ui">
+:root{
+  --gold:#ffbd25;
+  --gold-dim:#b78624;
+  --bg:#000;
+  --panel:#050505;
+  --line:#5c4717;
+  --muted:#9c7725;
+}
+html,body{background:#000!important;color:var(--gold)!important}
+body{font-family:Arial,Helvetica,sans-serif!important;margin:0}
+body > :not(script):not(style):not(#ncx-v126-shell):not(#n126-modal):not(#n126-toast){display:none!important}
 body>script,body>style{display:none}
-#ncx-v125-shell{display:flex;min-height:100vh;justify-content:center;align-items:center;background:#000;padding:18px;box-sizing:border-box}
-.n125-device{width:min(100%,560px);min-height:calc(100vh - 36px);display:flex;flex-direction:column;position:relative}
-.n125-top{display:flex;align-items:center;justify-content:space-between;padding:4px 5px 14px;font-weight:900;letter-spacing:.11em;font-size:12px}
-.n125-title{font-size:20px;letter-spacing:.16em}.n125-status{font-size:10px;text-align:right;line-height:1.5}
-.n125-board{position:relative;border:5px solid var(--ink);border-radius:5px 9px 3px 7px;padding:25px 23px 22px;min-height:330px;box-sizing:border-box;box-shadow:2px 0 0 var(--ink),-1px 2px 0 var(--ink);background:#000}
-.n125-board:before,.n125-board:after{content:"";position:absolute;pointer-events:none;border:3px solid var(--ink);inset:8px 10px 12px 7px;opacity:.22;border-radius:9px 3px 8px 4px;transform:rotate(-.35deg)}
-.n125-board:after{inset:4px 6px 7px 12px;transform:rotate(.28deg);opacity:.12}
-.n125-lines{position:relative;z-index:2;display:grid;gap:20px;margin-top:15px}.n125-line{height:4px;background:var(--ink);border-radius:50%;transform:rotate(-.4deg);box-shadow:18px 1px 0 -1px var(--ink)}.n125-line:nth-child(2){width:91%;transform:rotate(.35deg)}.n125-line:nth-child(3){width:96%;transform:rotate(-.7deg)}.n125-line:nth-child(4){width:87%;transform:rotate(.5deg)}
-.n125-case{position:relative;z-index:3;border-bottom:3px solid var(--ink);padding-bottom:17px;margin-bottom:18px}.n125-case-kicker{font-size:9px;letter-spacing:.18em}.n125-case h1{font-size:29px;margin:7px 0 2px;line-height:1.05;letter-spacing:.04em}.n125-case p{font-size:11px;line-height:1.5;margin:8px 0 0;max-width:430px}.n125-meta{display:flex;gap:15px;margin-top:13px;font-size:9px;font-weight:900;letter-spacing:.12em}
-.n125-actions{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:10px;margin-top:18px}.n125-btn{appearance:none;border:4px solid var(--ink);background:#000;color:var(--ink);font-weight:900;font-size:13px;letter-spacing:.08em;padding:14px 9px;min-height:55px;cursor:pointer;border-radius:3px 7px 4px 5px;box-shadow:2px 2px 0 var(--ink);transition:transform .08s,background .08s}.n125-btn:hover{background:#211704}.n125-btn:active{transform:translate(2px,2px);box-shadow:none}.n125-btn.small{font-size:11px;min-height:48px}
-.n125-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.n125-bottom .n125-btn{min-height:62px;font-size:11px}.n125-icon{font-size:21px;display:block;margin-bottom:3px}
-.n125-hint{text-align:center;font-size:8px;letter-spacing:.14em;margin:15px 0 2px;opacity:.65}
-.n125-modal{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:100000;display:none;padding:18px;box-sizing:border-box;overflow:auto}.n125-modal.open{display:flex;justify-content:center;align-items:center}.n125-modal-card{width:min(100%,560px);border:4px solid var(--ink);background:#000;padding:20px;box-shadow:4px 4px 0 var(--ink)}.n125-modal-head{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--ink);padding-bottom:12px;margin-bottom:14px}.n125-modal-head h2{margin:0;font-size:20px;letter-spacing:.12em}.n125-x{border:3px solid var(--ink);background:#000;color:var(--ink);font-size:18px;font-weight:900;width:40px;height:40px;cursor:pointer}.n125-menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.n125-menu-item{border:3px solid var(--ink);background:#000;color:var(--ink);padding:13px;text-align:left;cursor:pointer;font-weight:900}.n125-menu-item span{display:block;font-size:8px;opacity:.65;margin-top:4px;font-weight:normal}.n125-panel{display:none}.n125-panel.active{display:block}.n125-panel p{font-size:11px;line-height:1.6}.n125-list{display:grid;gap:7px}.n125-list button{border:2px solid var(--ink);background:#000;color:var(--ink);padding:10px;text-align:left;font-weight:900;cursor:pointer}
-.n125-legacy{display:none;position:fixed;inset:0;z-index:99999;background:#000;overflow:auto;padding:12px}.n125-legacy.open{display:block}.n125-legacy-back{position:sticky;top:0;z-index:3;display:block;margin:0 auto 10px;width:min(100%,560px);border:4px solid var(--ink);background:#000;color:var(--ink);padding:12px;font-weight:900;cursor:pointer}
-/* Re-skin the actual game view when ACTION is opened. */
-.n125-legacy #app{display:block!important;max-width:900px!important;margin:0 auto!important;padding:10px!important;color:var(--ink)!important;background:#000!important}.n125-legacy #app .panel,.n125-legacy #app .art,.n125-legacy #app button{background:#000!important;color:var(--ink)!important;border-color:var(--ink)!important}.n125-legacy #app .head{border-color:var(--ink)!important}.n125-legacy #app .title,.n125-legacy #app h1,.n125-legacy #app h2,.n125-legacy #app h3{color:var(--ink)!important}
-@media(max-width:500px){#ncx-v125-shell{padding:10px}.n125-device{min-height:calc(100vh - 20px)}.n125-board{min-height:310px;padding:21px 17px}.n125-case h1{font-size:25px}.n125-actions{grid-template-columns:1.2fr 1fr 1fr;gap:7px}.n125-btn{border-width:3px;padding:12px 6px;font-size:11px}.n125-bottom{gap:7px}.n125-bottom .n125-btn{min-height:57px}.n125-menu-grid{grid-template-columns:1fr}}
+
+#ncx-v126-shell{
+  min-height:100vh;background:#000;display:flex;justify-content:center;
+  align-items:flex-start;padding:24px;box-sizing:border-box;
+}
+.n126-device{width:min(100%,1040px);padding:0 0 24px;box-sizing:border-box}
+.n126-case{
+  border:5px solid var(--gold);border-radius:16px;padding:54px 58px 44px;
+  min-height:570px;box-sizing:border-box;background:#000;position:relative;
+  box-shadow:inset 0 0 0 7px #2b210d,inset 0 0 0 12px #090806;
+}
+.n126-case:before,.n126-case:after{
+  content:"";position:absolute;pointer-events:none;border:3px solid var(--gold-dim);
+  border-radius:22px;opacity:.34;
+}
+.n126-case:before{inset:17px 18px 20px 17px}
+.n126-case:after{inset:28px 28px 30px 26px;opacity:.16}
+.n126-kicker{font-size:18px;letter-spacing:.17em;margin-bottom:28px;position:relative;z-index:2}
+.n126-title{font-size:56px;line-height:1;letter-spacing:.015em;margin:0 0 30px;position:relative;z-index:2}
+.n126-desc{font-size:22px;line-height:1.55;max-width:870px;margin:0 0 28px;position:relative;z-index:2}
+.n126-meta{display:flex;gap:36px;font-size:16px;font-weight:800;letter-spacing:.12em;margin-bottom:34px;position:relative;z-index:2}
+.n126-notes{border-top:4px solid var(--gold);padding-top:22px;display:grid;gap:18px;position:relative;z-index:2}
+.n126-note{
+  min-height:27px;font-size:18px;line-height:1.4;display:flex;gap:16px;align-items:baseline;
+  border-bottom:1px solid rgba(255,189,37,.16);padding-bottom:10px;
+}
+.n126-note b{font-size:11px;letter-spacing:.14em;color:var(--gold-dim);min-width:86px}
+.n126-note span{color:#f2b933}
+
+.n126-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding:0 5px}
+.n126-brand{font-size:14px;letter-spacing:.16em;font-weight:900}
+.n126-status{font-size:11px;letter-spacing:.12em;text-align:right;line-height:1.5}
+
+.n126-main-actions,.n126-bottom-actions{display:grid;gap:14px;margin-top:18px}
+.n126-main-actions{grid-template-columns:1fr 1fr 1fr}
+.n126-bottom-actions{grid-template-columns:1fr 1fr 1fr}
+.n126-btn{
+  border:5px solid var(--gold);background:#000;color:var(--gold);border-radius:12px;
+  min-height:92px;font-weight:900;font-size:18px;letter-spacing:.08em;cursor:pointer;
+  box-shadow:3px 3px 0 var(--gold);transition:.08s;
+}
+.n126-btn:hover{background:#160f02}
+.n126-btn:active{transform:translate(3px,3px);box-shadow:none}
+.n126-btn .icon{display:block;font-size:25px;margin-bottom:8px}
+.n126-btn.subtle{min-height:66px;font-size:14px}
+
+#n126-modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:100000;display:none;
+  padding:24px;box-sizing:border-box;overflow:auto;
+}
+#n126-modal.open{display:flex;justify-content:center;align-items:center}
+.n126-modal-card{
+  width:min(100%,920px);max-height:calc(100vh - 48px);overflow:auto;
+  border:5px solid var(--gold);border-radius:14px;background:#000;padding:28px;
+  box-sizing:border-box;box-shadow:6px 6px 0 var(--gold);
+}
+.n126-head{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--gold);padding-bottom:16px;margin-bottom:20px}
+.n126-head h2{font-size:30px;margin:0;letter-spacing:.09em}
+.n126-close,.n126-back{
+  border:3px solid var(--gold);background:#000;color:var(--gold);font-weight:900;
+  cursor:pointer;padding:10px 14px;font-size:12px;letter-spacing:.08em
+}
+.n126-content{display:grid;gap:10px}
+.n126-item{
+  width:100%;text-align:left;border:2px solid var(--gold-dim);background:#000;color:var(--gold);
+  padding:15px 16px;cursor:pointer;font-size:13px;box-sizing:border-box
+}
+.n126-item:hover{border-color:var(--gold);background:#100b02}
+.n126-item strong{display:block;font-size:15px;letter-spacing:.08em;margin-bottom:5px}
+.n126-item span{display:block;color:#b99642;font-size:11px;line-height:1.45}
+.n126-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.n126-section{border:2px solid #4c3a14;padding:16px;background:#030303}
+.n126-section h3{margin:0 0 10px;font-size:13px;letter-spacing:.1em}
+.n126-section p{margin:0;color:#b99642;font-size:11px;line-height:1.55}
+.n126-empty{border:2px dashed #4c3a14;padding:28px;text-align:center;color:#806321;font-size:12px;letter-spacing:.06em}
+.n126-meter{height:5px;background:#211908;margin-top:10px}.n126-meter i{display:block;height:100%;width:0;background:var(--gold)}
+.n126-control{display:flex;align-items:center;gap:14px;border:2px solid #4c3a14;padding:12px}
+.n126-control label{font-size:12px;min-width:120px}.n126-control input{flex:1}
+.n126-toggle{border:2px solid var(--gold-dim);background:#000;color:var(--gold);padding:9px 12px;cursor:pointer}
+.n126-choice-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+@media(max-width:760px){
+  #ncx-v126-shell{padding:12px}
+  .n126-case{padding:34px 24px 30px;min-height:0}
+  .n126-title{font-size:37px}.n126-desc{font-size:16px}
+  .n126-kicker{font-size:13px}.n126-meta{font-size:11px}
+  .n126-main-actions,.n126-bottom-actions{gap:8px}
+  .n126-btn{border-width:3px;min-height:72px;font-size:13px;box-shadow:2px 2px 0 var(--gold)}
+  .n126-grid,.n126-choice-row{grid-template-columns:1fr}
+  .n126-modal-card{padding:18px}
+}
 </style>
 
-<div id="ncx-v125-shell">
-  <div class="n125-device">
-    <div class="n125-top"><div class="n125-title">NOCTURNE</div><div class="n125-status"><span id="n125-clock">03:17</span><br><span id="n125-weather">FOG</span></div></div>
-    <section class="n125-board">
-      <div class="n125-case"><div class="n125-case-kicker">CURRENT CASE FILE</div><h1 id="n125-case-title">THE INVESTIGATION</h1><p id="n125-case-text">The county is quiet. Too quiet. Your notebook is open, your equipment is ready, and something out there is watching.</p><div class="n125-meta"><span id="n125-location">NOCTURNE COUNTY</span><span id="n125-chapter">CH. 01</span></div></div>
-      <div class="n125-lines"><div class="n125-line"></div><div class="n125-line"></div><div class="n125-line"></div><div class="n125-line"></div></div>
+<div id="ncx-v126-shell">
+  <div class="n126-device">
+    <div class="n126-topbar">
+      <div class="n126-brand">NOCTURNE COUNTY</div>
+      <div class="n126-status"><span id="n126-clock">03:17</span><br><span id="n126-weather">FOG</span></div>
+    </div>
+
+    <section class="n126-case">
+      <div class="n126-kicker">CURRENT CASE FILE</div>
+      <h1 class="n126-title" id="n126-title">THE INVESTIGATION</h1>
+      <p class="n126-desc" id="n126-desc">The county is quiet. Too quiet. Your notebook is open, your equipment is ready, and something out there is watching.</p>
+      <div class="n126-meta">
+        <span id="n126-location">NOCTURNE COUNTY</span>
+        <span id="n126-chapter">CH. 01</span>
+      </div>
+
+      <div class="n126-notes" id="n126-notes">
+        <div class="n126-note"><b>OBJECTIVE</b><span>Determine why the county has gone silent.</span></div>
+        <div class="n126-note"><b>LEAD</b><span>Something was seen near the tree line.</span></div>
+        <div class="n126-note"><b>EVIDENCE</b><span>No confirmed identification yet.</span></div>
+        <div class="n126-note"><b>STATUS</b><span>Investigation active.</span></div>
+      </div>
     </section>
-    <div class="n125-actions">
-      <button class="n125-btn" onclick="window.n125Action()">ACTION</button>
-      <button class="n125-btn small" onclick="window.n125Open('characters')">CHARACTER</button>
-      <button class="n125-btn small" onclick="window.n125Open('settings')">SETTINGS</button>
+
+    <div class="n126-main-actions">
+      <button class="n126-btn" onclick="window.n126Open('action')">ACTION</button>
+      <button class="n126-btn" onclick="window.n126Open('character')">CHARACTER</button>
+      <button class="n126-btn" onclick="window.n126Open('settings')">SETTINGS</button>
     </div>
-    <div class="n125-bottom">
-      <button class="n125-btn" onclick="window.n125Open('inventory')"><span class="n125-icon">▣</span>INVENTORY</button>
-      <button class="n125-btn" onclick="window.n125Open('map')"><span class="n125-icon">⌖</span>MAP</button>
-      <button class="n125-btn" onclick="window.n125Open('journal')"><span class="n125-icon">▤</span>JOURNAL</button>
+
+    <div class="n126-bottom-actions">
+      <button class="n126-btn" onclick="window.n126Open('inventory')"><span class="icon">□</span>INVENTORY</button>
+      <button class="n126-btn" onclick="window.n126Open('map')"><span class="icon">⊙</span>MAP</button>
+      <button class="n126-btn" onclick="window.n126Open('journal')"><span class="icon">≡</span>JOURNAL</button>
     </div>
-    <div class="n125-hint">SELECT A FILE · DO NOT TRUST THE DARK</div>
   </div>
 </div>
 
-<div class="n125-modal" id="n125-modal">
- <div class="n125-modal-card">
-  <div class="n125-modal-head"><h2 id="n125-modal-title">FIELD MENU</h2><button class="n125-x" onclick="window.n125Close()">×</button></div>
-  <div id="n125-modal-body"></div>
- </div>
+<div id="n126-modal">
+  <div class="n126-modal-card">
+    <div class="n126-head">
+      <h2 id="n126-modal-title">FIELD</h2>
+      <div>
+        <button class="n126-back" id="n126-back" style="display:none" onclick="window.n126Back()">← BACK</button>
+        <button class="n126-close" onclick="window.n126Close()">CLOSE</button>
+      </div>
+    </div>
+    <div id="n126-modal-content"></div>
+  </div>
 </div>
 
-<div class="n125-legacy" id="n125-legacy"><button class="n125-legacy-back" onclick="window.n125CloseAction()">← BACK TO CASE FILE</button><div id="n125-legacy-host"></div></div>
+<div id="n126-toast" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:200000;background:#000;border:3px solid #ffbd25;color:#ffbd25;padding:12px 18px;font-weight:900;font-size:11px;letter-spacing:.08em;display:none"></div>
 
 <script>
 (function(){
- const modal=document.getElementById('n125-modal'),body=document.getElementById('n125-modal-body');
- const data={
-  inventory:{title:'INVENTORY',items:[['FIELD KIT','Medkit · Flares · Silvered Cartridges · Film · Rope'],['KEY ITEMS','Story objects and keys will appear here as they are found.'],['TOOLS','Equipment changes what you can investigate and how you can survive.']]},
-  characters:{title:'CHARACTERS',items:[['KNOWN PEOPLE','Mara · Eli · Agnes · Jonah · Claire · Boone'],['RELATIONSHIPS','What you say and do changes future conversations.'],['MEMORY','Characters remember important choices.']]},
-  map:{title:'MAP',items:[['NOCTURNE COUNTY','Explore areas, buildings, roads and hidden locations.'],['CURRENT LEAD','Use the map to decide where to investigate next.'],['ANOMALIES','Some locations change with time, weather and supernatural activity.']]},
-  journal:{title:'JOURNAL',items:[['QUESTS','Main investigation · side investigations · character threads'],['EVIDENCE','Photographs · documents · objects · unexplained traces'],['BOARD','Connect evidence, test hypotheses and find contradictions'],['MEMORIES','Recovered · fragmented · unresolved'],['CRYPTIDS','Bigfoot · Chupacabra · Goatman · Flatwoods Monster · Yeti · Wendigo · Skinwalkers · UFOs · Mothman'],['ENDINGS','Ten endings and the True Ending are tracked here']]},
-  settings:{title:'SETTINGS',items:[['AUDIO','Master · Music · Ambience · Dialogue · Dynamic Audio'],['SAVE / LOAD','Four manual slots · Quick Save · Quick Load · Autosave'],['REPLAY','Ending archive · discoveries · 100% completion']]}
- };
- function open(name){const d=data[name]||data.journal;document.getElementById('n125-modal-title').textContent=d.title;body.innerHTML='<div class="n125-list">'+d.items.map((x,i)=>`<button onclick="window.n125Notice('${String(x[0]).replaceAll("'","\\'")}')"><b>${x[0]}</b><span>${x[1]}</span></button>`).join('')+'</div>';modal.classList.add('open')}
- window.n125Open=open;window.n125Close=()=>modal.classList.remove('open');window.n125Notice=(s)=>{if(window.nocturneUIToast)window.nocturneUIToast(s);else alert(s)};
- window.n125Action=()=>{document.getElementById('n125-legacy').classList.add('open');const host=document.getElementById('n125-legacy-host');const app=document.getElementById('app');if(app&&!host.contains(app))host.appendChild(app);app.style.display='block';try{if(window.render)window.render()}catch(e){}};
- window.n125CloseAction=()=>{document.getElementById('n125-legacy').classList.remove('open');const app=document.getElementById('app');if(app)document.body.insertBefore(app,document.body.children[1]);app.style.display='none';};
- function sync(){
-   const s=window.S||{};document.getElementById('n125-location').textContent=(window.nocturneLocation||s.loc||'NOCTURNE COUNTY').toString().toUpperCase();document.getElementById('n125-chapter').textContent='CH. '+String(window.nocturneChapter||s.chapter||1).padStart(2,'0');
-   document.getElementById('n125-clock').textContent=window.nocturneTime||((s.hour!==undefined?String(s.hour).padStart(2,'0'):'03')+':17');
-   document.getElementById('n125-weather').textContent=(localStorage.getItem('nocturne_weather_state')||'FOG').toUpperCase();
+  const modal=document.getElementById('n126-modal');
+  const content=document.getElementById('n126-modal-content');
+  const title=document.getElementById('n126-modal-title');
+  const back=document.getElementById('n126-back');
+  const toast=document.getElementById('n126-toast');
+  const stack=[];
+
+  const data={
+    action:{
+      title:'ACTION',
+      items:[
+        ['EXPLORE','Move to another location and search the environment.','explore'],
+        ['INVESTIGATE','Examine the current lead for evidence.','investigate'],
+        ['HUNT','Prepare for a cryptid encounter.','hunt'],
+        ['TALK','Speak to someone available at this location.','talk'],
+        ['REST','Pass time and allow the county to change.','rest']
+      ]
+    },
+    character:{
+      title:'CHARACTER',
+      items:[
+        ['MARA','Your closest active connection in the investigation.','mara'],
+        ['ELI','A local source with knowledge of the county.','eli'],
+        ['AGNES','A witness whose story may not be complete.','agnes'],
+        ['JONAH','A field contact with his own reasons for helping.','jonah']
+      ]
+    },
+    inventory:{
+      title:'INVENTORY',
+      items:[
+        ['FIELD KIT','Your standard investigation equipment.','kit'],
+        ['EVIDENCE BAG','Collected physical evidence is stored here.','evidence'],
+        ['KEY ITEMS','Important objects acquired during the story.','keys']
+      ]
+    },
+    map:{
+      title:'MAP',
+      items:[
+        ['MERCY','Current town hub and investigation base.','mercy'],
+        ['BLACKWOOD FOREST','Dense woodland. Known cryptid activity.','forest'],
+        ['OLD CHURCH','Abandoned structure outside town.','church'],
+        ['COUNTY ROAD 17','Remote road connecting several investigation areas.','road']
+      ]
+    },
+    journal:{
+      title:'JOURNAL',
+      items:[
+        ['QUESTS','Current objectives and optional investigations.','quests'],
+        ['EVIDENCE','Everything physically or digitally recovered.','evidence'],
+        ['INVESTIGATION BOARD','Connections, hypotheses and contradictions.','board'],
+        ['MEMORIES','Recovered and unresolved memories.','memories'],
+        ['CRYPTIDS','Known cryptids and encounter records.','cryptids'],
+        ['ENDINGS','Discovered endings and completion progress.','endings']
+      ]
+    },
+    settings:{
+      title:'SETTINGS',
+      items:[
+        ['AUDIO','Volume and dynamic-audio controls.','audio'],
+        ['SAVE / LOAD','Manual saves, quick save and autosave.','save'],
+        ['REPLAYABILITY','Completion, ending archive and New Game Plus.','replay']
+      ]
+    }
+  };
+
+  const detail={
+    explore:{title:'EXPLORE',html:'<div class="n126-choice-row"><button class="n126-item" onclick="window.n126Do(\\'forest\\')"><strong>BLACKWOOD FOREST</strong><span>Follow the tree line.</span></button><button class="n126-item" onclick="window.n126Do(\\'road\\')"><strong>COUNTY ROAD 17</strong><span>Search the roadside.</span></button></div>'},
+    investigate:{title:'INVESTIGATE',html:'<div class="n126-section"><h3>CURRENT LEAD</h3><p>There are signs of something moving beyond the tree line. Search carefully. You can investigate, photograph, track, or leave the area.</p></div><br><button class="n126-item" onclick="window.n126Notice(\\'Evidence collected.\\')"><strong>SEARCH THE AREA</strong><span>Examine tracks, disturbed vegetation and nearby objects.</span></button>'},
+    hunt:{title:'HUNT',html:'<div class="n126-section"><h3>FIELD PREPARATION</h3><p>No confirmed cryptid identification yet. Entering a hunt without sufficient evidence increases risk.</p></div><br><button class="n126-item" onclick="window.n126Notice(\\'Hunt prepared. Stealth is recommended.\\')"><strong>PREPARE HUNT</strong><span>Equip your field kit and begin tracking.</span></button>'},
+    talk:{title:'TALK',html:'<div class="n126-empty">NO ONE AVAILABLE FOR A CONVERSATION HERE RIGHT NOW.</div>'},
+    rest:{title:'REST',html:'<div class="n126-section"><h3>PASS TIME</h3><p>Time matters. Some clues, encounters and characters change depending on when you act.</p></div><br><button class="n126-item" onclick="window.n126Notice(\\'One hour passes.\\')"><strong>WAIT ONE HOUR</strong><span>Advance the clock and update the world.</span></button>'},
+    mara:{title:'MARA',html:'<div class="n126-section"><h3>RELATIONSHIP</h3><p>Trust is developing. What you choose to reveal will affect later conversations.</p></div>'},
+    eli:{title:'ELI',html:'<div class="n126-section"><h3>LOCAL SOURCE</h3><p>Eli knows more about the county than he initially admits.</p></div>'},
+    agnes:{title:'AGNES',html:'<div class="n126-section"><h3>WITNESS</h3><p>Her account contains an unresolved contradiction.</p></div>'},
+    jonah:{title:'JONAH',html:'<div class="n126-section"><h3>FIELD CONTACT</h3><p>Jonah has useful equipment and his own reasons for staying involved.</p></div>'},
+    kit:{title:'FIELD KIT',html:'<div class="n126-grid"><div class="n126-section"><h3>MEDKIT</h3><p>Restores survivability after dangerous encounters.</p></div><div class="n126-section"><h3>FLARES</h3><p>Useful for darkness, signalling and certain encounters.</p></div><div class="n126-section"><h3>CAMERA</h3><p>Documents evidence and cryptid activity.</p></div><div class="n126-section"><h3>ROPE</h3><p>Can interact with traversal and environmental hazards.</p></div></div>'},
+    evidence:{title:'EVIDENCE',html:'<div class="n126-empty">NO EVIDENCE HAS BEEN CATALOGUED IN THIS VIEW YET.</div>'},
+    keys:{title:'KEY ITEMS',html:'<div class="n126-empty">NO STORY-CRITICAL ITEMS ACQUIRED.</div>'},
+    mercy:{title:'MERCY',html:'<div class="n126-section"><h3>CURRENT LOCATION</h3><p>The county seat. Shops, homes, the sheriff\\'s office and the old records building are here.</p></div>'},
+    forest:{title:'BLACKWOOD FOREST',html:'<div class="n126-section"><h3>KNOWN CONDITIONS</h3><p>Dense cover. Poor visibility at night. Reports of large tracks and unexplained calls.</p></div>'},
+    church:{title:'OLD CHURCH',html:'<div class="n126-section"><h3>UNRESOLVED</h3><p>The building has been abandoned for years. A locked basement has not been searched.</p></div>'},
+    road:{title:'COUNTY ROAD 17',html:'<div class="n126-section"><h3>FIELD NOTE</h3><p>Several reports originate from this stretch of road. The last one mentioned lights in the sky.</p></div>'},
+    quests:{title:'QUESTS',html:'<div class="n126-list"><div class="n126-item"><strong>MAIN INVESTIGATION</strong><span>Determine why the county has gone silent.</span></div><div class="n126-item"><strong>THE TREE LINE</strong><span>Investigate the reported movement near Blackwood Forest.</span></div></div>'},
+    board:{title:'INVESTIGATION BOARD',html:'<div class="n126-grid"><div class="n126-section"><h3>EVIDENCE</h3><p>0 connected pieces.</p></div><div class="n126-section"><h3>HYPOTHESES</h3><p>No confirmed hypothesis.</p></div><div class="n126-section"><h3>CONTRADICTIONS</h3><p>None identified.</p></div><div class="n126-section"><h3>CONCLUSIONS</h3><p>No conclusion reached.</p></div></div>'},
+    memories:{title:'MEMORIES',html:'<div class="n126-empty">MEMORIES WILL APPEAR HERE AS THEY ARE RECOVERED.</div>'},
+    cryptids:{title:'CRYPTIDS',html:'<div class="n126-list"><div class="n126-item"><strong>UNKNOWN</strong><span>No cryptid has been positively identified yet.</span></div></div>'},
+    endings:{title:'ENDINGS',html:'<div class="n126-section"><h3>0 / 10 DISCOVERED</h3><div class="n126-meter"><i style="width:0%"></i></div><p style="margin-top:12px">Undiscovered endings remain hidden.</p></div>'},
+    audio:{title:'AUDIO',html:'<div class="n126-content"><div class="n126-control"><label>MASTER</label><input type="range" min="0" max="100" value="80"></div><div class="n126-control"><label>MUSIC</label><input type="range" min="0" max="100" value="70"></div><div class="n126-control"><label>AMBIENCE</label><input type="range" min="0" max="100" value="85"></div><button class="n126-toggle" onclick="window.n126Notice(\\'Dynamic audio toggled.\\')">DYNAMIC AUDIO: ON</button></div>'},
+    save:{title:'SAVE / LOAD',html:'<div class="n126-list"><button class="n126-item" onclick="window.n126Notice(\\'Game saved to Slot 1.\\')"><strong>SAVE SLOT 1</strong><span>Manual save.</span></button><button class="n126-item" onclick="window.n126Notice(\\'Quick save created.\\')"><strong>QUICK SAVE</strong><span>Create a save at the current state.</span></button><button class="n126-item" onclick="window.n126Notice(\\'Quick load selected.\\')"><strong>QUICK LOAD</strong><span>Restore the most recent quick save.</span></button></div>'},
+    replay:{title:'REPLAYABILITY',html:'<div class="n126-grid"><div class="n126-section"><h3>COMPLETION</h3><p>0% complete.</p></div><div class="n126-section"><h3>ENDINGS</h3><p>0 / 10 discovered.</p></div><div class="n126-section"><h3>CRYPTIDS</h3><p>0 / 9 identified.</p></div><div class="n126-section"><h3>SECRETS</h3><p>0 discovered.</p></div></div><br><button class="n126-item" onclick="window.n126Notice(\\'New Run started. Archive retained.\\')"><strong>NEW RUN</strong><span>Begin another investigation.</span></button>'}
+  };
+
+  function showList(name){
+    const d=data[name];
+    title.textContent=d.title;
+    back.style.display='none';
+    content.innerHTML='<div class="n126-content">'+d.items.map(x=>`<button class="n126-item" onclick="window.n126Do('${x[2]}')"><strong>${x[0]}</strong><span>${x[1]}</span></button>`).join('')+'</div>';
+  }
+  window.n126Open=function(name){stack.length=0;modal.classList.add('open');showList(name)};
+  window.n126Do=function(name){
+    if(detail[name]){
+      stack.push(name);
+      title.textContent=detail[name].title;
+      back.style.display='inline-block';
+      content.innerHTML=detail[name].html;
+    }else if(data[name]) showList(name);
+  };
+  window.n126Back=function(){stack.pop(); if(stack.length)window.n126Do(stack[stack.length-1]); else {modal.classList.remove('open')}};
+  window.n126Close=function(){modal.classList.remove('open');stack.length=0};
+  window.n126Notice=function(msg){
+    toast.textContent=msg;toast.style.display='block';
+    clearTimeout(window.__n126toast);window.__n126toast=setTimeout(()=>toast.style.display='none',1600);
+  };
+
+  function sync(){
+    const s=window.S||{};
+    document.getElementById('n126-location').textContent=(window.nocturneLocation||s.loc||'NOCTURNE COUNTY').toString().toUpperCase();
+    document.getElementById('n126-chapter').textContent='CH. '+String(window.nocturneChapter||s.chapter||1).padStart(2,'0');
+    document.getElementById('n126-clock').textContent=window.nocturneTime||((s.hour!==undefined?String(s.hour).padStart(2,'0'):'03')+':17');
+    document.getElementById('n126-weather').textContent=(localStorage.getItem('nocturne_weather_state')||'FOG').toUpperCase();
+  }
+  sync();setInterval(sync,1000);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')window.n126Close()});
+})();
+</script>
+
+
+<!-- V127 PLAYABLE NOTEBOOK BRIDGE -->
+<div id="n127-play" style="display:none;position:fixed;inset:0;background:#000;z-index:150000;overflow:auto;padding:18px;box-sizing:border-box">
+  <div style="width:min(100%,980px);margin:auto;border:4px solid #ffbd25;border-radius:12px;background:#000;box-shadow:5px 5px 0 #ffbd25;min-height:calc(100vh - 36px);box-sizing:border-box;padding:22px">
+    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #ffbd25;padding-bottom:14px;gap:12px">
+      <div><div id="n127-kicker" style="font-size:11px;letter-spacing:.16em;color:#b78624">FIELD CHRONICLE</div><h2 id="n127-title" style="margin:5px 0 0;font-size:30px;letter-spacing:.06em;color:#ffbd25">SCENE</h2></div>
+      <button onclick="window.n127Close()" style="border:3px solid #ffbd25;background:#000;color:#ffbd25;padding:9px 12px;font-weight:900;cursor:pointer">BACK</button>
+    </div>
+    <div id="n127-state" style="margin:14px 0;color:#9c7725;font-size:11px;letter-spacing:.08em"></div>
+    <div id="n127-text" style="color:#f2b933;font-size:16px;line-height:1.7;white-space:pre-wrap;border-left:2px solid #4c3a14;padding:6px 16px;margin:14px 0 20px"></div>
+    <div id="n127-combat"></div>
+    <div id="n127-choices" style="display:grid;gap:10px"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  function el(id){return document.getElementById(id)}
+  function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function refresh(){
+    const s=window.S||{};
+    const sc=window.nocturneGetScene?window.nocturneGetScene():null;
+    const combat=window.nocturneGetCombat?window.nocturneGetCombat():null;
+    el('n127-kicker').textContent=(sc?.area||s.loc||'FIELD').toString().toUpperCase()+' · '+(window.nocturneGetSceneId?window.nocturneGetSceneId():'');
+    el('n127-title').textContent=sc?.title||'NO ACTIVE SCENE';
+    el('n127-state').textContent=`DAY ${s.day||1} · ${String(s.hour??0).padStart(2,'0')}:00 · HEALTH ${Math.round(s.hp??0)}/${s.maxHp??100} · COMPOSURE ${Math.round(s.sanity??0)}`;
+    el('n127-text').textContent=window.nocturneGetSceneText?window.nocturneGetSceneText():'The investigation is ready.';
+    const cbox=el('n127-combat'); cbox.innerHTML='';
+    if(combat){
+      cbox.innerHTML=`<div style="border:3px solid #ffbd25;padding:14px;margin-bottom:16px;color:#ffbd25"><b>${esc(combat.enemy?.name||'UNKNOWN THREAT')}</b><br>HP ${Math.max(0,combat.enemy?.hp||0)}<div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px"><button class="n127choice" data-attack="shoot">FIRE</button><button class="n127choice" data-attack="flare">FLARE</button><button class="n127choice" data-attack="observe">OBSERVE</button><button class="n127choice" data-attack="mercy">LOWER WEAPON</button></div></div>`;
+      cbox.querySelectorAll('[data-attack]').forEach(b=>b.onclick=()=>{window.attack(b.dataset.attack);refresh()});
+    }
+    const box=el('n127-choices'); box.innerHTML='';
+    (sc?.choices||[]).forEach((ch,i)=>{
+      const b=document.createElement('button');b.className='n127choice';b.textContent=(i+1)+'. '+ch[0];
+      b.style.cssText='border:3px solid #ffbd25;background:#000;color:#ffbd25;padding:15px;text-align:left;font-weight:900;cursor:pointer;font-size:13px;letter-spacing:.04em';
+      b.onclick=()=>{window.choose(i);refresh();window.n126Notice&&window.n126Notice('Choice recorded.');};box.appendChild(b);
+    });
+    if(!sc && !combat){box.innerHTML='<div style="border:2px dashed #4c3a14;padding:24px;text-align:center;color:#806321">NO ACTIVE INVESTIGATION SCENE.</div>'}
+  }
+  window.n127Play=function(){el('n127-play').style.display='block';refresh()};
+  window.n127Close=function(){el('n127-play').style.display='none'; if(window.n126Open){} };
+  window.n127choiceStyle=function(){};
+  const style=document.createElement('style');style.textContent='.n127choice:hover{background:#130d02!important}.n127choice:active{transform:translateY(1px)}';document.head.appendChild(style);
+
+  // Replace the old placeholder ACTION with the actual narrative engine.
+  const oldOpen=window.n126Open;
+  window.n126Open=function(name){
+    if(name==='action'){window.n127Play();return}
+    if(name==='character'){oldOpen('character');return}
+    if(name==='inventory'){oldOpen('inventory');return}
+    if(name==='map'){oldOpen('map');return}
+    if(name==='journal'){oldOpen('journal');return}
+    if(name==='settings'){oldOpen('settings');return}
+    oldOpen(name);
+  };
+})();
+</script>
+
+<style id="v128-production-css">
+.v128-panel{border:1px solid #3b4650;background:#0d1217;padding:12px;margin-top:12px}.v128-panel h3{margin:0 0 8px;color:#e7ddc9;font:14px Arial,sans-serif;letter-spacing:.08em}.v128-chapters{display:grid;grid-template-columns:1fr 1fr;gap:7px}.v128-ch{border:1px solid #29323a;padding:8px;background:#10161c}.v128-ch.active{border-color:#c9a96e;box-shadow:inset 3px 0 #c9a96e}.v128-ch.done{opacity:.65}.v128-ch b{font:12px Arial,sans-serif}.v128-ch span{display:block;color:#8e968e;font-size:11px;margin-top:3px}.v128-weak{font-size:12px;color:#aeb7b2}.v128-pill{display:inline-block;border:1px solid #394650;padding:2px 6px;margin:2px;color:#aeb7b2;font-size:10px}
+@media(max-width:650px){.v128-chapters{grid-template-columns:1fr}}
+</style>
+<script id="v128-production-pass">
+(()=>{
+  const WEAK={
+    pale_crawler:{name:'Pale Crawler',hp:34,damage:8,weak:'flare',symbol:'⌁',area:'pine'},
+    juvenile_sasquatch:{name:'Juvenile Sasquatch',hp:48,damage:10,weak:'film',symbol:'🜃',area:'pine'},
+    chupacabra_pup:{name:'Chupacabra Pup',hp:30,damage:11,weak:'flare',symbol:'🜁',area:'wastes'},
+    dog_skinwalker:{name:'Dog Skinwalker',hp:42,damage:13,weak:'truth',symbol:'◌',area:'highway'},
+    mothlet:{name:'Mothlet',hp:24,damage:7,weak:'film',symbol:'☽',area:'sky'},
+    little_grey:{name:'Little Grey',hp:38,damage:12,weak:'reason',symbol:'◉',area:'flatwoods'},
+    goatling:{name:'Goatling',hp:45,damage:12,weak:'reason',symbol:'🜂',area:'highway'}
+  };
+  Object.assign(window.CRYPTIDS||{},WEAK);
+  const originalStart=window.startCombat;
+  window.startCombat=function(id){
+    if(WEAK[id]){
+      window.combat={id:id,enemy:JSON.parse(JSON.stringify(WEAK[id])),turn:0,returnScene:window.nocturneGetSceneId&&window.nocturneGetSceneId()};
+      if(window.S){ window.S.flags['encounter_'+id]=true; }
+      if(typeof window.render==='function') window.render();
+      return;
+    }
+    return originalStart(id);
+  };
+  const oldWin=window.winCombat;
+  window.winCombat=function(){
+    const c=window.combat;
+    if(c && WEAK[c.id]){
+      const id=c.id;
+      window.S.xp=(window.S.xp||0)+8;
+      window.S.threat=Math.max(0,(window.S.threat||0)-1);
+      window.S.flags['defeated_'+id]=true;
+      window.S.clues=window.S.clues||[];
+      window.S.clues.push('defeated:'+id);
+      window.S.log.unshift('You survived an encounter with '+WEAK[id].name+'.');
+      window.S.log=window.S.log.slice(0,30);
+      window.combat=null;
+      if(c.returnScene) window.sceneId=c.returnScene;
+      else window.sceneId='arrival';
+      if(typeof window.advanceTime==='function') window.advanceTime(5);
+      if(typeof window.render==='function') window.render();
+      return;
+    }
+    return oldWin();
+  };
+
+  const weakByArea={
+    pine:['pale_crawler','juvenile_sasquatch'],
+    flatwoods:['little_grey'],
+    highway:['dog_skinwalker','goatling'],
+    wastes:['chupacabra_pup'],
+    sky:['mothlet']
+  };
+  const weakText={
+    pale_crawler:'Something pale moves between the roots. It has too many joints and is trying very hard not to be seen.',
+    juvenile_sasquatch:'A young Sasquatch watches from the trees. It is frightened. Then something larger answers its call.',
+    chupacabra_pup:'A small, hairless creature darts between the rocks. Its teeth are wrong, but its fear is unmistakably animal.',
+    dog_skinwalker:'A stray dog stands in the road. It knows your name. When it smiles, you remember why you stopped trusting dogs.',
+    mothlet:'The air fills with tiny wings. The mothlets swarm the light, each carrying the same red mark on its wings.',
+    little_grey:'A small grey figure watches from the field. When your camera focuses, it is suddenly much closer.',
+    goatling:'Something with small horns scrapes at the asphalt. A larger set of hoofprints surrounds it.'
+  };
+  const oldRandom=window.triggerRandomEncounter;
+  window.triggerRandomEncounter=function(){
+    const s=window.S||{}; const pool=weakByArea[s.loc]||[];
+    if(pool.length && Math.random()<0.34){
+      const id=pool[Math.floor(Math.random()*pool.length)];
+      const old=window.sceneId;
+      const temp='weak_'+s.day+'_'+s.hour+'_'+Math.floor(Math.random()*99999);
+      window.SCENES[temp]={area:s.loc,title:WEAK[id].name,symbol:WEAK[id].symbol,text:weakText[id],choices:[
+        ['fight','Engage it.',{combat:id}],
+        ['observe','Observe it and gather information.',{stats:{reason:1},next:old,collect:'encounter_'+id}],
+        ['avoid','Stay hidden and let it pass.',{stats:{mercy:1},next:old}]
+      ]};
+      window.sceneId=temp;
+      return true;
+    }
+    return oldRandom();
+  };
+
+  const chapters=[
+    ['01','The County Line','Bigfoot','Arrival / first tracks'],
+    ['02','Father\'s House','Chupacabra','The family investigation'],
+    ['03','Main Street','Goatman','Rumours become evidence'],
+    ['04','County Archives','Flatwoods Monster','The historical pattern'],
+    ['05','St. Mercy Cemetery','Yeti','The family dead and the northern trail'],
+    ['06','Blackwater Woods','The Wendigo','Hunger, memory and the first major moral test'],
+    ['07','The Old Station','Skinwalkers','Identity, imitation and the father\'s last route'],
+    ['08','Nocturne Lake','UFOs / The Object','The sky begins answering back'],
+    ['09','The Restricted Site','Mothman','The county\'s oldest witness'],
+    ['10','The Overlap','All Cryptids','Places begin occupying one another'],
+    ['11','The Void','The Presence','The father is found'],
+    ['12','The Last Night','The Presence','The rules are finally understood'],
+    ['13','The Door','All Cryptids','Every accumulated choice converges'],
+    ['14','The Choice','The Presence','Father, memory and the boundary'],
+    ['15','Nocturne','The Presence','True Ending / final consequences']
+  ];
+  const sceneChapter={
+    arrival:1,radio:1,archive:2,archive_photo:2,archive_lie:2,diner:2,
+    pine_intro:3,pine_after:3,flatwoods_intro:4,highway_intro:5,
+    wendigo_intro:6,mothman_omen:9,final_threshold:13
+  };
+  function chapter(){
+    const sid=window.nocturneGetSceneId&&window.nocturneGetSceneId();
+    if(sid && sceneChapter[sid]) return sceneChapter[sid];
+    const loc=(window.S||{}).loc;
+    const map={mercy:1,pine:3,flatwoods:4,highway:5,north:7,wastes:6,sky:8};
+    return map[loc]||1;
+  }
+  function sync(){
+    const n=chapter();
+    window.nocturneChapter=n;
+    const S=window.S||{}; S.chapter=n;
+    const home=document.querySelector('.head .title');
+    if(home) home.textContent='NOCTURNE COUNTY / CHAPTER '+String(n).padStart(2,'0');
+    const host=document.getElementById('v128-chapter-panel');
+    if(host){
+      host.innerHTML='<div class="v128-panel"><h3>CHAPTER PROGRESSION</h3><div class="v128-chapters">'+chapters.map((c,i)=>`<div class="v128-ch ${i+1===n?'active':''} ${i+1<n?'done':''}"><b>${i+1<n?'✓ ':i+1===n?'▶ ':'○ '}${c[1]}</b><span>${c[2]} · ${c[3]}</span></div>`).join('')+'</div><div style="margin-top:9px"><span class="v128-pill">${n}/15</span><span class="v128-pill">MAJOR CRYPTID: ${chapters[n-1][2].toUpperCase()}</span></div></div>';
+    }
+  }
+  function inject(){
+    if(document.getElementById('v128-chapter-panel'))return;
+    const left=document.querySelector('.left'); if(!left)return;
+    const d=document.createElement('div');d.id='v128-chapter-panel';left.appendChild(d);sync();
+  }
+  setTimeout(inject,2200); setInterval(sync,1000);
+  window.NOCTURNE_CHAPTERS_V128=chapters;
+  window.NOCTURNE_WEAK_CRYPTIDS_V128=WEAK;
+})();
+</script>
+
+<script id="nocturne-final-integration">
+(function(){
+"use strict";
+
+const NS="nocturneCountyFinal";
+const defaults={
+ chapter:1, scene:null, flags:{}, stats:{health:100,stamina:100,stress:0},
+ inventory:["Field Notebook","Flashlight"], evidence:[], memories:[],
+ anchors:{north:true,south:true,east:true,west:true,forest:true,mountain:true,marsh:true,settlement:true,centre:true},
+ relationships:{mara:0,lucas:0,father:0},
+ skills:{stealth:1,combat:1,investigation:1},
+ weather:"Overcast", time:"Night", audio:true, volume:0.55,
+ ending:null, completed:false, playthroughs:0, log:[]
+};
+let state=load()||structuredClone(defaults);
+
+function save(){
+ localStorage.setItem(NS,JSON.stringify(state));
+ toast("Game saved");
+}
+function load(){
+ try{const x=localStorage.getItem(NS); return x?Object.assign(structuredClone(defaults),JSON.parse(x)):null}catch(e){return null}
+}
+function toast(t){
+ let x=document.getElementById("nc-toast"); if(!x){x=document.createElement("div");x.id="nc-toast";document.body.appendChild(x)}
+ x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1400);
+}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function activeChapter(n){
+ return window["nocturneChapter"+n] || null;
+}
+function chapterScene(n,id){
+ const c=activeChapter(n); if(!c)return null;
+ return c.scenes.find(s=>s.id===id)||c.scenes[0];
+}
+function log(t){state.log.push({t,at:new Date().toISOString()}); if(state.log.length>100)state.log.shift()}
+function addEvidence(e){if(e&&!state.evidence.includes(e))state.evidence.push(e)}
+function weatherFor(ch){
+ const arr=["Clear","Fog","Rain","Heavy Rain","Snow","Whiteout","Storm"];
+ return arr[(ch*3+state.playthroughs)%arr.length];
+}
+function cryptidFor(ch){
+ const a=["Pale Crawlers","Little Grey Aliens","Juvenile Sasquatch","Chupacabra Pups","Dog Skinwalkers","Mothlets","The Wendigo","Skinwalkers","Mothman","The Presence"];
+ return a[Math.min(a.length-1,Math.max(0,ch-1))];
+}
+function render(){
+ document.body.innerHTML=`
+ <div id="nc-app">
+  <header class="nc-top">
+   <div><div class="nc-kicker">NOCTURNE COUNTY</div><h1>FIELD CASE // ${String(state.chapter).padStart(2,"0")}</h1></div>
+   <div class="nc-actions">
+    <button data-act="save">SAVE</button><button data-act="load">LOAD</button><button data-act="new">NEW GAME</button>
+   </div>
+  </header>
+  <main class="nc-grid">
+   <aside class="nc-panel nc-left">
+    <section><h2>STATUS</h2>
+     <div class="nc-stat"><span>HEALTH</span><b>${state.stats.health}</b></div>
+     <div class="nc-bar"><i style="width:${state.stats.health}%"></i></div>
+     <div class="nc-stat"><span>STAMINA</span><b>${state.stats.stamina}</b></div>
+     <div class="nc-bar"><i style="width:${state.stats.stamina}%"></i></div>
+     <div class="nc-stat"><span>STRESS</span><b>${state.stats.stress}</b></div>
+    </section>
+    <section><h2>ENVIRONMENT</h2><p>${esc(state.weather)} · ${esc(state.time)}</p><p>Area threat: <b>${esc(cryptidFor(state.chapter))}</b></p></section>
+    <section><h2>RELATIONSHIPS</h2><p>Mara <b>${state.relationships.mara}</b></p><p>Lucas <b>${state.relationships.lucas}</b></p><p>Father <b>${state.relationships.father}</b></p></section>
+    <section><h2>EVIDENCE <span>${state.evidence.length}</span></h2><div class="nc-list">${state.evidence.slice(-8).map(esc).map(x=>`<div>${x}</div>`).join("")||"<div>None yet.</div>"}</div></section>
+   </aside>
+   <section class="nc-main">
+    <div class="nc-location">${esc(state.weather)} / ${esc(state.time)} / ${esc(cryptidFor(state.chapter))}</div>
+    <div id="nc-scene"></div>
+   </section>
+   <aside class="nc-panel nc-right">
+    <section><h2>INVENTORY</h2><div class="nc-list">${state.inventory.map(esc).map(x=>`<div>${x}</div>`).join("")}</div></section>
+    <section><h2>OBJECTIVES</h2><div class="nc-list">
+      <div>Investigate the current area</div><div>Gather evidence</div><div>Survive the encounter</div><div>Advance the investigation</div>
+    </div></section>
+    <section><h2>CASE LOG</h2><div class="nc-log">${state.log.slice(-6).map(x=>`<div>${esc(x.t)}</div>`).join("")}</div></section>
+    <section><h2>AUDIO</h2><button data-act="audio">${state.audio?"AUDIO ON":"AUDIO OFF"}</button></section>
+   </aside>
+  </main>
+ </div>`;
+ const s=state.scene?chapterScene(state.chapter,state.scene):chapterScene(state.chapter);
+ if(!s){renderMenu();return}
+ state.scene=s.id;
+ const box=document.getElementById("nc-scene");
+ box.innerHTML=`
+   <div class="nc-chapter">CHAPTER ${state.chapter} · ${esc(activeChapter(state.chapter)?.title||"INVESTIGATION")}</div>
+   <h2 class="nc-title">${esc(s.title)}</h2>
+   <p class="nc-story">${esc(s.text)}</p>
+   ${s.evidence?.length?`<div class="nc-evidence">${s.evidence.map(esc).map(x=>`<span>◈ ${x}</span>`).join("")}</div>`:""}
+   <div class="nc-tactical">
+     <button data-act="stealth">STEALTH</button>
+     <button data-act="combat">TACTICAL COMBAT</button>
+     <button data-act="investigate">INVESTIGATE</button>
+   </div>
+   <div class="nc-choices">${(s.choices||[]).map((c,i)=>`<button class="nc-choice" data-choice="${i}">${esc(c.label)}</button>`).join("")}</div>
+ `;
+ s.evidence?.forEach(addEvidence);
+ bind();
+}
+function renderMenu(){
+ document.getElementById("nc-scene").innerHTML=`<div class="nc-chapter">NOCTURNE COUNTY</div><h2 class="nc-title">CASE FILE</h2><p class="nc-story">The county remembers things that never happened. Hunt the cryptids. Follow the evidence. Decide what deserves to survive.</p>`;
+}
+function bind(){
+ document.querySelectorAll("[data-choice]").forEach(b=>b.onclick=()=>{
+   const s=chapterScene(state.chapter,state.scene), c=s.choices[+b.dataset.choice];
+   if(!c)return;
+   applyChoice(s,c);
+ });
+ document.querySelectorAll("[data-act]").forEach(b=>b.onclick=()=>{
+   const a=b.dataset.act;
+   if(a==="save")save();
+   if(a==="load"){state=load()||structuredClone(defaults);render();toast("Game loaded")}
+   if(a==="new"){if(confirm("Start a new playthrough?")){state=structuredClone(defaults);state.playthroughs=(load()?.playthroughs||0)+1;save();render()}}
+   if(a==="audio"){state.audio=!state.audio;render()}
+   if(a==="stealth")encounter("stealth");
+   if(a==="combat")encounter("combat");
+   if(a==="investigate")investigate();
+ });
+}
+function applyChoice(s,c){
+ const label=c.label.toLowerCase();
+ if(label.includes("mara"))state.relationships.mara+=2;
+ if(label.includes("lucas"))state.relationships.lucas+=2;
+ if(label.includes("father"))state.relationships.father+=2;
+ if(label.includes("trust"))state.relationships.mara+=2;
+ if(label.includes("forgive"))state.relationships.lucas+=3;
+ if(label.includes("push her away"))state.relationships.mara-=3;
+ if(label.includes("preserve"))state.flags.preserve=true;
+ if(label.includes("force")||label.includes("concentrate"))state.flags.concentrate=true;
+ if(label.includes("witness"))state.flags.witness=true;
+ if(label.includes("refuse"))state.flags.refuseWitness=true;
+ if(label.includes("give"))state.memories.push(label);
+ if(label.includes("help mothman"))state.flags.mothman=true;
+ if(label.includes("move silently")||label.includes("stealth"))state.skills.stealth++;
+ if(label.includes("fight"))state.skills.combat++;
+ state.flags["ch"+state.chapter+"_"+s.id+"_"+c.label]=true;
+ addEvidence(c.label);
+ log(`Choice: ${c.label}`);
+ let next=c.next;
+ if(next==="chapter12"){state.chapter=12;state.scene=null}
+ else if(next==="chapter13"){state.chapter=13;state.scene=null}
+ else if(next==="chapter14"){state.chapter=14;state.scene=null}
+ else if(next==="chapter15"){state.chapter=15;state.scene=null}
+ else if(next==="credits"){state.completed=true;state.ending=evaluateEnding();save();renderEnding();return}
+ else state.scene=next;
+ if(state.chapter!==1 && state.scene===null)state.weather=weatherFor(state.chapter);
+ state.time=state.chapter>=11?"Night":"Dusk";
+ save();render();
+}
+function encounter(mode){
+ const difficulty=40+state.chapter*4;
+ if(mode==="stealth"){
+   const chance=Math.min(90,55+state.skills.stealth*7-state.stats.stress/4);
+   if(Math.random()*100<chance){state.stats.stamina=Math.max(0,state.stats.stamina-10);log("Stealth succeeded.");toast("Stealth succeeded");}
+   else{state.stats.health=Math.max(0,state.stats.health-12);state.stats.stress=Math.min(100,state.stats.stress+8);log("Stealth failed; detected.");toast("Detected")}
+ }else{
+   const chance=Math.min(90,50+state.skills.combat*7);
+   if(Math.random()*100<chance){state.stats.health=Math.max(1,state.stats.health-8);log("Tactical combat won.");toast("Encounter cleared")}
+   else{state.stats.health=Math.max(0,state.stats.health-20);state.stats.stress=Math.min(100,state.stats.stress+12);log("Combat went badly.");toast("You took damage")}
  }
- sync();setInterval(sync,1000);
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){window.n125Close();if(document.getElementById('n125-legacy').classList.contains('open'))window.n125CloseAction()}});
+ save();render();
+}
+function investigate(){
+ state.stats.stamina=Math.max(0,state.stats.stamina-5);
+ const clues=["Unusual tracks","Audio anomaly","Cryptid spoor","Distorted photograph","Environmental sample","Witness statement"];
+ const clue=clues[(state.evidence.length+state.chapter)%clues.length];
+ addEvidence(`${clue} — Chapter ${state.chapter}`);
+ state.skills.investigation++;
+ log(`Investigation found: ${clue}`);
+ toast("Evidence found");save();render();
+}
+function evaluateEnding(){
+ if(state.flags.concentrate && state.flags.witness)return 9;
+ if(state.flags.refuseWitness && state.relationships.mara<0)return 1;
+ if(state.flags.witness && state.relationships.lucas>=3 && state.relationships.mara>=3 && state.flags.preserve)return 10;
+ if(state.flags.preserve && state.flags.refuseWitness)return 3;
+ if(state.relationships.mara>=4)return 4;
+ if(state.memories.length>=2)return 5;
+ if(state.flags.mothman)return 6;
+ if(state.relationships.father>=2)return 7;
+ if(state.relationships.lucas>=3)return 8;
+ return 2;
+}
+function renderEnding(){
+ const box=document.getElementById("nc-scene");
+ box.innerHTML=`<div class="nc-chapter">CASE CLOSED</div><h2 class="nc-title">ENDING ${state.ending}</h2><p class="nc-story">Your choices have determined this version of Mercy County. Start another playthrough to uncover a different history.</p><button class="nc-choice" data-act="new">NEW PLAYTHROUGH</button>`;
+ bind();
+}
+const css=document.createElement("style");
+css.textContent=`
+*{box-sizing:border-box}body{margin:0;background:#101114;color:#e7e5df;font-family:Georgia,serif}button{font:inherit;color:inherit;background:#191b20;border:1px solid #4b4d52;padding:10px 14px;cursor:pointer}button:hover{background:#24262c;border-color:#aaa}.nc-top{display:flex;justify-content:space-between;align-items:center;padding:22px 28px;border-bottom:1px solid #36383d;background:#141519}.nc-kicker{font:12px monospace;letter-spacing:4px;opacity:.6}.nc-top h1{margin:4px 0;font-size:23px;letter-spacing:2px}.nc-actions{display:flex;gap:8px}.nc-grid{display:grid;grid-template-columns:250px minmax(400px,1fr) 250px;min-height:calc(100vh - 90px)}.nc-panel{padding:20px;border-right:1px solid #303238;background:#15171b}.nc-right{border-right:0;border-left:1px solid #303238}.nc-panel section{margin-bottom:24px}.nc-panel h2{font:11px monospace;letter-spacing:2px;color:#aeb0b5;border-bottom:1px solid #34363b;padding-bottom:8px}.nc-stat{display:flex;justify-content:space-between;font:12px monospace;margin-top:8px}.nc-bar{height:5px;background:#292b30;margin:5px 0 12px}.nc-bar i{display:block;height:100%;background:#c6c0aa}.nc-list div,.nc-log div{font-size:12px;padding:6px 0;border-bottom:1px solid #25272b}.nc-main{padding:42px 7%;background:radial-gradient(circle at 50% 10%,#24262b 0,#101114 48%)}.nc-location,.nc-chapter{font:11px monospace;letter-spacing:2px;color:#999ca3}.nc-title{font-size:42px;line-height:1.05;margin:14px 0 22px}.nc-story{font-size:19px;line-height:1.65;max-width:800px;color:#d5d2ca}.nc-evidence{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0}.nc-evidence span{font:11px monospace;padding:7px 9px;border:1px solid #42444a;background:#17191d}.nc-choices{display:grid;gap:9px;margin-top:25px}.nc-choice{text-align:left;padding:15px 17px;font-size:15px}.nc-tactical{display:flex;gap:8px;margin-top:28px}.nc-tactical button{font:11px monospace;letter-spacing:1px}.nc-choice:hover{transform:translateX(3px)}#nc-toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,15px);opacity:0;background:#e7e5df;color:#111;padding:10px 16px;font:12px monospace;transition:.2s;z-index:99}#nc-toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:900px){.nc-grid{grid-template-columns:1fr}.nc-panel{display:none}.nc-main{padding:28px 20px}.nc-title{font-size:32px}.nc-actions{flex-wrap:wrap}}
+`;
+document.head.appendChild(css);
+window.NocturneFinal={getState:()=>state,save,load,evaluateEnding,render};
+render();
 })();
 </script>
 
