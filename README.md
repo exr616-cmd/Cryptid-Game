@@ -1,13 +1,60 @@
-# Nocturne County V33 — Clean Story UI
+# Nocturne County V124 — Audio & Replayability
 
-V33 is based on the full V29 game, not the V31/V32 mini prototype.
+Final major feature package.
 
-It preserves the original story engine and systems while:
-- removing legacy integration panels from the story screen
-- removing the County Remembers corner popup
-- removing the V27 QA popup
-- hiding the desktop sidebars on mobile
-- keeping the full underlying inventory/map/people/journal data accessible through overlays
-- keeping the original scene choices and global game functions intact
+AUDIO:
+- Master volume
+- Music volume
+- Ambience volume
+- Dialogue volume
+- Dynamic audio toggle
+- Persistent audio settings
 
-Deploy `index.html` at the GitHub Pages root.
+The intended dynamic audio architecture supports:
+- Area ambience
+- Cryptid-specific sound profiles
+- Time-of-day layers
+- Weather layers
+- Combat music
+- Stealth tension
+- Supernatural distortion
+- Silence events
+- Character themes
+- Major story stingers
+
+REPLAYABILITY:
+- 10-ending archive
+- Cryptid identification tracker
+- Memory tracker
+- Location tracker
+- Optional investigation tracker
+- Secret discovery tracker
+- Overall completion percentage
+- Previously discovered ending names remain available while undiscovered
+  endings stay hidden
+- New Run / New Game Plus flag
+- Discovered archive retained between runs
+
+Replay philosophy:
+The game should never reveal the solution to the mystery merely because the
+player has completed it once. Previously discovered evidence can remain
+available as a reference, but story knowledge still has to be interpreted by
+the player.
+
+100% completion is intended to mean:
+- All 10 endings
+- All 9 major cryptid classifications
+- All major memories
+- All county locations
+- All optional investigations
+- All secrets
+
+Integration hook:
+window.nocturneMarkReplay(type,id)
+
+Types:
+endings, cryptids, memories, locations, investigations, secrets
+
+This completes the final planned major feature. Remaining work is integration,
+story/content polish, balancing, testing, bug fixing, and final art/audio
+assets.
